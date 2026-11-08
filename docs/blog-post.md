@@ -89,7 +89,7 @@ The diagnosis engine is deterministic: priors multiplied by outcome evidence, sy
 - **Live app:** _link_
 - **Mainnet proof:** _link_/proof
 - **No-wallet demo:** _link_/demo
-- **Code:** _GitHub link_
+- **Code:** https://github.com/IamHarrie-Labs/retrace
 
 The sample passport is a real ThinkPad T480 on Mainnet: [`0xcf67d39d…bcb3`](https://suiscan.xyz/mainnet/object/0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3).
 
