@@ -14,6 +14,8 @@ primary_region = "lhr"
   NEXT_PUBLIC_DEMO_PASSPORT_ID = "0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3"
 
 [env]
+  # Must be the public URL. Without it sign-in and every write return 403 behind the Fly proxy.
+  APP_ORIGIN = "https://retrace.fly.dev"
   RETRACE_DATA_DIR = "/app/.data"
   PORT = "3000"
 

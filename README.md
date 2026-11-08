@@ -91,6 +91,8 @@ The app is one Node server plus a SQLite file, so it needs **one machine with a 
 
 `NEXT_PUBLIC_*` values are inlined into browser code at build time, so pass them as build args, not only as runtime env.
 
+**Set `APP_ORIGIN` to the public URL** (e.g. `https://retrace.fly.dev`). Behind a host's proxy the server only sees its internal address, so without it the same-origin check refuses every sign-in and write with a 403. If you rename the Fly app, change it in `fly.toml` too.
+
 **Fly.io** (config in `fly.toml`):
 
 ```bash
@@ -100,7 +102,7 @@ fly secrets set TATUM_API_KEY=... MEMWAL_ACCOUNT_ID=... MEMWAL_PRIVATE_KEY=... S
 fly deploy
 ```
 
-**Docker Compose** (any VPS): `docker compose up -d --build` reads `.env.local` and keeps the index in the `retrace-data` volume.
+**Docker Compose** (any VPS): add `APP_ORIGIN` to `.env.local`, then `docker compose up -d --build` reads `.env.local` and keeps the index in the `retrace-data` volume.
 
 **Railway / Render:** deploy from the `Dockerfile`, attach a volume at `/app/.data`, add the variables from `.env.example`, and set the `NEXT_PUBLIC_*` ones as build variables too.
 
