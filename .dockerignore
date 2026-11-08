@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.env*
+!.env.example
+.data
+backups
+scripts
+design/source-backup
+design/previews
+move/build
+*.log
+*.tsbuildinfo

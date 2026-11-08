@@ -1,0 +1,3 @@
+"use client";
+import Link from "next/link";
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <div className="product-page" role="alert"><h1>This chapter<br /><em>didn’t load.</em></h1><p className="my-6 max-w-lg text-sm leading-7 text-muted">Retrace could not finish loading this page. Retry the request or return to your devices. No successful save is undone by this message.</p><div className="flex flex-wrap gap-5"><button onClick={reset} className="action-button">Try again</button><Link href="/devices" className="text-link">Back to my devices ↗</Link></div></div>;}

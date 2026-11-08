@@ -1,0 +1,1 @@
+export default function Loading(){return <div className="product-page" role="status" aria-label="Loading Retrace"><div className="skeleton short"/><div className="skeleton"/><div className="skeleton short"/><span className="sr-only">Please wait while the page loads.</span></div>;}

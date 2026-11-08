@@ -1,0 +1,13 @@
+
+@media (max-width:767px){
+  /* Pick a voice. / Find yours. on two lines */
+  html body #novule-hero .list-section-title p{display:grid!important;gap:2px}
+  html body #novule-hero .nv-split-a,html body #novule-hero .nv-split-b{display:block!important}
+  html body #novule-hero .nv-split-b{text-align:right!important}
+  /* taller, wider passes */
+  html body #novule-hero#novule-hero#novule-hero ul.user-items-list-item-container{padding-left:32px!important;padding-right:32px!important}
+  html body #novule-hero#novule-hero#novule-hero ul.user-items-list-item-container > li.list-item{flex:0 0 calc(100vw - 64px)!important;width:calc(100vw - 64px)!important;max-width:none!important}
+  html body #novule-hero#novule-hero#novule-hero ul.user-items-list-item-container > li.list-item .list-item-media{height:300px!important}
+  /* the tear line and its two bites sit where the photo meets the pass */
+  html body #novule-hero#novule-hero#novule-hero ul.user-items-list-item-container > li.list-item::before{top:291px!important}
+}

@@ -1,0 +1,772 @@
+<root >
+  <html >
+    <head >
+      <meta >
+      <link href=./favicon.ico>
+      <link href=./favicon.svg>
+      <link href=./apple-touch-icon.png>
+      <link href=./site.webmanifest>
+      <meta >
+      <meta >
+      <link href=/fonts/peabody-house/PeabodyHouse-Regular.woff2>
+      <link href=/fonts/peabody-house/PeabodyHouse-Pixelated-latin.woff2>
+      <link href=./_app/immutable/assets/0.MRp3lwRp.css>
+      <link href=./_app/immutable/assets/index.CFDwdt-Q.css>
+      <link href=./_app/immutable/entry/start.DV2mfTwA.js>
+      <link href=./_app/immutable/chunks/DHtaZsYz.js>
+      <link href=./_app/immutable/chunks/CQmNSERn.js>
+      <link href=./_app/immutable/entry/app.Bz6TzN8O.js>
+      <link href=./_app/immutable/chunks/BfIpm9oc.js>
+      <link href=./_app/immutable/chunks/CJqOrZxr.js>
+      <link href=./_app/immutable/nodes/0.DKS-sWib.js>
+      <link href=./_app/immutable/chunks/DO1YG76W.js>
+      <link href=./_app/immutable/chunks/B2syyq62.js>
+      <link href=./_app/immutable/chunks/D9KNTVeD.js>
+      <link href=./_app/immutable/nodes/2.DhATJj58.js>
+      <link href=./_app/immutable/chunks/C6mx7J8u.js>
+      <link href=./_app/immutable/chunks/CezCZ8EY.js>
+      <meta >
+      <link href=https://peabodyhouse.com/>
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <meta >
+      <title >
+        Peabody House • Digital Brand World Implementation Studio
+    <body >
+      <div class=body>
+        <header class=svelte-126o6dr>
+          <nav class=svelte-126o6dr>
+            <a href=/ class=logo svelte-126o6dr is-active aria-label=Peabody House>
+              <svg class=svelte-126o6dr>
+              <span class=logo-text svelte-126o6dr>
+                <span class=nav-label svelte-126o6dr is-active>
+                  <span class=nav-label__text nav-label__text--regular svelte-126o6dr>
+                    Peabody House
+                  <span class=nav-label__text nav-label__text--active svelte-126o6dr>
+                    Peabody House
+            <button class=menu-toggle svelte-126o6dr>
+              Menu
+            <a href=/expertise/ class=menu-link>
+              <span class=nav-label svelte-126o6dr>
+                <span class=nav-label__text nav-label__text--regular svelte-126o6dr>
+                  Expertise
+                <span class=nav-label__text nav-label__text--active svelte-126o6dr>
+                  Expertise
+            <a href=/works/ class=menu-link>
+              <span class=nav-label svelte-126o6dr>
+                <span class=nav-label__text nav-label__text--regular svelte-126o6dr>
+                  Works
+                <span class=nav-label__text nav-label__text--active svelte-126o6dr>
+                  Works
+            <a href=/studio/ class=menu-link>
+              <span class=nav-label svelte-126o6dr>
+                <span class=nav-label__text nav-label__text--regular svelte-126o6dr>
+                  Studio
+                <span class=nav-label__text nav-label__text--active svelte-126o6dr>
+                  Studio
+            <a href=/contact/ class=menu-link>
+              <span class=nav-label svelte-126o6dr>
+                <span class=nav-label__text nav-label__text--regular svelte-126o6dr>
+                  Contact
+                <span class=nav-label__text nav-label__text--active svelte-126o6dr>
+                  Contact
+            <div id=mobile-menu class=mobile-menu svelte-126o6dr>
+              <ul class=svelte-126o6dr>
+                <li class=svelte-126o6dr>
+                  <a href=/expertise/ class=mobile-link>
+                    <span class=eye-cell svelte-126o6dr>
+                      <svg class=eye svelte-126o6dr>
+                    <span class=label svelte-126o6dr>
+                      Expertise
+                <li class=svelte-126o6dr>
+                  <a href=/works/ class=mobile-link>
+                    <span class=eye-cell svelte-126o6dr>
+                      <svg class=eye svelte-126o6dr>
+                    <span class=label svelte-126o6dr>
+                      Works
+                <li class=svelte-126o6dr>
+                  <a href=/studio/ class=mobile-link>
+                    <span class=eye-cell svelte-126o6dr>
+                      <svg class=eye svelte-126o6dr>
+                    <span class=label svelte-126o6dr>
+                      Studio
+                <li class=svelte-126o6dr contact>
+                  <a href=/contact/ class=mobile-link>
+                    <span class=eye-cell svelte-126o6dr>
+                      <svg class=eye svelte-126o6dr>
+                    <span class=label svelte-126o6dr>
+                      Contact
+          <div class=controls svelte-126o6dr>
+            <menu class=svelte-126o6dr>
+              <div class=spotify-trigger-wrap svelte-126o6dr>
+                <button class=play svelte-126o6dr aria-label=Open player>
+                  <svg class=svelte-126o6dr>
+                <div class=spotify-popover svelte-126o6dr aria-label=Spotify playlist>
+                  <div class=spotify-popover__embed svelte-126o6dr>
+              <div class=search svelte-1w6by2l>
+                <button class=search-trigger svelte-1w6by2l aria-label=Search>
+                  <svg >
+                <div class=search-panel svelte-1w6by2l>
+                  <div class=search-field svelte-1w6by2l>
+                    <svg class=search-field__icon svelte-1w6by2l>
+                    <input aria-label=Search pages class=svelte-1w6by2l>
+                    <kbd class=search-field__hint svelte-1w6by2l>
+                  <p class=search-state svelte-1w6by2l>
+                    Type to search the site.
+                  <p class=sr-only>
+              <div class=email-wrap svelte-126o6dr>
+                <button class=email-copy svelte-126o6dr aria-label=Copy email to clipboard>
+                  <svg class=svelte-126o6dr>
+                  <span class=email-copy__tip toast svelte-126o6dr>
+                    <strong class=svelte-126o6dr>
+                      hello@peabodyhouse.com
+                    copied to clipboard.
+              <div class=options-wrap svelte-126o6dr>
+                <button class=options svelte-126o6dr aria-label=More options>
+                  <svg class=svelte-126o6dr>
+        <main >
+          <div class=hero-subhero grid>
+            <section class=hero svelte-x35jl1 data-slice-type=hero_subhero>
+              <svg class=logo svelte-x35jl1>
+              <h1 class=heading svelte-x35jl1>
+                <p >
+                  Peabody House is a digital brand world implementation studio.
+              <p class=subhead svelte-x35jl1>
+                We future-proof brand aspirations into elevated, scalable design systems. Led by human expression from start to finish.
+              <div class=loading-stripe svelte-6dzeld>
+                <span class=svelte-6dzeld>
+            <aside class=hand js-line-displacement svelte-x35jl1>
+            <section class=subhero svelte-x35jl1 data-slice-type=hero_subhero>
+              <svg class=eyes svelte-aqckr9 style=vector-effect: non-scaling-stroke;>
+              <h2 class=h3 svelte-x35jl1>
+                The ordeal of being perceived.
+              <div class=content svelte-x35jl1>
+                <p >
+                  Your audience is more perceptible than you may think. How you affect is how you attract, and how you attract is how you convert.
+                <p >
+                  People are more sensitive than ever to AI in 2026, and AI-prompted digital is no longer cutting it in the scroll generation. Peabody House offers a practical means to build human-led immersion, credibility, and identity into your online brand world, and we do it quickly.
+                <a href=/expertise/ class=cta>
+                  You're always playing the game
+          <section class=grid service-cards svelte-1cpv9bu aria-label=Services>
+            <div class=sticky-head svelte-1cpv9bu>
+              <div class=sticky-head__track svelte-1cpv9bu>
+                <small class=eyebrow sticky-head__eyebrow svelte-1cpv9bu>
+                  Expertise
+              <h2 class=h3 heading sticky-head__heading svelte-1cpv9bu>
+                What does Peabody House do?
+            <a href=/expertise/ class=cta>
+              Our areas of expertise
+            <ul class=cards svelte-1cpv9bu>
+              <li class=svelte-1cpv9bu>
+                <article class=svelte-1cpv9bu>
+                  <figure class=svelte-1cpv9bu>
+                    <a href=/expertise/technical-implementation/>
+                    <figcaption class=sr-only svelte-1cpv9bu>
+                      Technical implementation
+                  <h3 id=service-card-title-0 style=--color: var(--color-blue); class=svelte-1cpv9bu>
+                    Technical Implementation
+                  <div class=description svelte-1cpv9bu>
+                    <p >
+                      One of Peabody House’s deepest and most diverse specialties. Custom code and integrations, CMS, CRM, third-party vendors, creative frontend, the list goes on. We have been technical builders since 2014 and have always kept pace.
+                  <a href=/expertise/technical-implementation/ class=cta>
+                    View our code
+              <li class=svelte-1cpv9bu>
+                <article class=svelte-1cpv9bu>
+                  <figure class=svelte-1cpv9bu>
+                    <a href=/expertise/visual-identity/>
+                    <figcaption class=sr-only svelte-1cpv9bu>
+                      Visual identity
+                  <h3 id=service-card-title-1 style=--color: var(--color-red); class=svelte-1cpv9bu>
+                    Visual Identity
+                  <div class=description svelte-1cpv9bu>
+                    <p >
+                      Design is a language, can’t you read? Design systems, component guides, design extrapolation. We've served as a human autocomplete for many brand ideas and aspirations.
+                  <a href=/expertise/visual-identity/ class=cta>
+                    View our systems
+              <li class=svelte-1cpv9bu>
+                <article class=svelte-1cpv9bu>
+                  <figure class=svelte-1cpv9bu>
+                    <a href=/expertise/art-direction/>
+                    <figcaption class=sr-only svelte-1cpv9bu>
+                      Art direction
+                  <h3 id=service-card-title-2 style=--color: var(--color-orange); class=svelte-1cpv9bu>
+                    Art Direction
+                  <div class=description svelte-1cpv9bu>
+                    <p >
+                      As a human-led digital agency, we prioritize human-to-human connection and making a good first impression more than ever. Immersive artwork that makes you feel something is Peabody House’s original love language.
+                  <a href=/expertise/art-direction/ class=cta>
+                    View our artwork
+              <li class=svelte-1cpv9bu>
+                <article class=svelte-1cpv9bu>
+                  <figure class=svelte-1cpv9bu>
+                    <a href=/expertise/accessibility/>
+                    <figcaption class=sr-only svelte-1cpv9bu>
+                      Accessibility
+                  <h3 id=service-card-title-3 style=--color: var(--color-teal); class=svelte-1cpv9bu>
+                    Accessibility
+                  <div class=description svelte-1cpv9bu>
+                    <p >
+                      WCAG is more than just a notion, it’s becoming more of a legal requirement, as it should be. Peabody House is committed to an anti-ableist and multi-sensory internet.
+                  <a href=/expertise/accessibility/ class=cta>
+                    View our WCAG compliance
+          <section class=case-study svelte-jho2ao data-slice-type=featured_block>
+            <p class=eyebrow svelte-jho2ao>
+              Case Study
+            <h2 class=title svelte-jho2ao>
+              Dr. Kevin Zhao
+            <div class=description svelte-jho2ao>
+              <p >
+                A full-service brand, design system, and multilingual CMS build for a neurosurgeon in the New York City Metro.
+            <ul class=categories svelte-jho2ao>
+              <li class=category svelte-jho2ao style=--color: var(--color-blue);>
+                Technical Implementation
+              <li class=category svelte-jho2ao style=--color: var(--color-red);>
+                Visual Identity
+              <li class=category svelte-jho2ao style=--color: var(--color-orange);>
+                Art Direction
+              <li class=category svelte-jho2ao style=--color: var(--color-teal);>
+                Accessibility
+            <a href=/works/drzhao/ class=mocks-link>
+              <div class=mocks svelte-jho2ao aria-label=Dr. Kevin Zhao’s homepage on desktop. A line drawing of a head with the brain shaded pink sits beside the headline “Hello! I’m Dr. Kevin Zhao, a Neurosurgeon based in New Jersey,” under a navigation bar with an English and Chinese language toggle. Dr. Kevin Zhao’s homepage on mobile. The same pink-brained head drawing stacks above the headline “Hello! I’m Dr. Kevin Zhao, a Neurosurgeon based in New Jersey,” with the language toggle and a menu button at the top.>
+            <a href=/works/drzhao/ class=cta>
+              View the work
+          <section class=grid clients-table svelte-6u9x8t data-slice-type=clients_table>
+            <div class=sticky-head svelte-6u9x8t>
+              <div class=sticky-head__track>
+                <small class=eyebrow sticky-head__eyebrow svelte-6u9x8t>
+                  Partnerships
+              <h2 class=h3 sticky-head__heading svelte-6u9x8t>
+                Who does Peabody House partner best with?
+            <div class=content svelte-6u9x8t>
+              <p >
+                We partner best with lean to mid-sized teams who practice AI discernment in an era where nuance and brand positioning matter more than ever. A brand world without "AI smell" remains the premium standard in 2026 and beyond. Human inspiration takes precedence over everything we ship at Peabody House.
+              <div class=table-wrap svelte-6u9x8t>
+                <table class=svelte-6u9x8t>
+                  <tbody class=svelte-6u9x8t>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        AlgoAlpha
+                      <td class=svelte-6u9x8t>
+                        FinTech
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-orange); aria-label=Art Direction>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Austin Regional Manufacturers Association
+                      <td class=svelte-6u9x8t>
+                        Manufacturing
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-teal); aria-label=Accessibility>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Dazzle Manufacturing
+                      <td class=svelte-6u9x8t>
+                        Manufacturing
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-orange); aria-label=Art Direction>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Dr. Kevin Zhao
+                      <td class=svelte-6u9x8t>
+                        Healthcare
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-teal); aria-label=Accessibility>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-orange); aria-label=Art Direction>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        GE HealthCare
+                      <td class=svelte-6u9x8t>
+                        Healthcare
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        ITG Brands
+                      <td class=svelte-6u9x8t>
+                        Manufacturing
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        JAX Mass Transit
+                      <td class=svelte-6u9x8t>
+                        Transportation
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-teal); aria-label=Accessibility>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-orange); aria-label=Art Direction>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Körber Interactive
+                      <td class=svelte-6u9x8t>
+                        IT
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Stamm Media
+                      <td class=svelte-6u9x8t>
+                        Experiential
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        StockIQ
+                      <td class=svelte-6u9x8t>
+                        SaaS
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-teal); aria-label=Accessibility>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Take7 Productions
+                      <td class=svelte-6u9x8t>
+                        Film
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+                    <tr class=svelte-6u9x8t>
+                      <td class=svelte-6u9x8t>
+                        Taylor Studios
+                      <td class=svelte-6u9x8t>
+                        Fabrication
+                      <td class=services svelte-6u9x8t>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-red); aria-label=Visual Identity>
+                        <span class=dot-wrap svelte-6u9x8t>
+                          <span class=dot svelte-6u9x8t style=background-color: var(--color-blue); aria-label=Technical Implementation>
+              <a href=/contact/ class=cta>
+                Let's work together
+          <section class=onboarding svelte-19icql0>
+            <header class=header svelte-19icql0>
+              <div class=eyebrow svelte-19icql0>
+                <p >
+                  Enough about us.
+              <div class=title-head svelte-19icql0>
+                <div id=intro-selection-title class=title svelte-19icql0>
+                  <h2 >
+                    How can we help you today?
+                <button class=reset svelte-19icql0 aria-label=Reset selection>
+                  Reset
+              <div class=description svelte-19icql0>
+                <p >
+                  Please tell us a little more about yourself.
+                <p >
+                  If you're in need of something more specific,
+                  <a href=/contact/>
+                    shoot us a note
+                  .
+            <ul class=tiles svelte-19icql0>
+              <li class=tile svelte-19icql0 style=--tile-color: var(--color-orange);>
+                <div class=tile-face svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=tile-collapsed svelte-19icql0>
+                      <span class=tile-collapsed-body svelte-19icql0>
+                        <span class=tile-title svelte-19icql0>
+                          <h3 >
+                            I'm an agency manager.
+                        <span class=tile-description svelte-19icql0>
+                          <p >
+                            I represent an agency and I'd like to partner with Peabody House.
+                      <span class=cta tile-cta svelte-19icql0>
+                        What's your model?
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I need a silent delivery partner to help boost my deliverables.
+                  <span class=split-title svelte-19icql0>
+                    I need white-label work.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=split split-a svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I have no bandwidth, but I'd like to say yes to more work.
+                  <span class=split-title svelte-19icql0>
+                    I need overflow capacity.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=ghost svelte-19icql0>
+                <div class=split split-b svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I'd like to team up with Peabody House to win a bid.
+                  <span class=split-title svelte-19icql0>
+                    I need to co-pitch a joint bid.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+              <li class=tile svelte-19icql0 style=--tile-color: var(--color-blue);>
+                <div class=tile-face svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=tile-collapsed svelte-19icql0>
+                      <span class=tile-collapsed-body svelte-19icql0>
+                        <span class=tile-title svelte-19icql0>
+                          <h3 >
+                            I'm an Engineering Manager.
+                        <span class=tile-description svelte-19icql0>
+                          <p >
+                            I'd like Peabody House to help implement some features.
+                      <span class=cta tile-cta svelte-19icql0>
+                        What would you like us to help you build?
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I’d love for Peabody House to add some pop and interactivity to my interface.
+                  <span class=split-title svelte-19icql0>
+                    I need frontend work.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=split split-a svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        We have a project coming up that needs lots of tasteful animation.
+                  <span class=split-title svelte-19icql0>
+                    I need motion design.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=ghost svelte-19icql0>
+                <div class=split split-b svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I’d love it if Peabody House set me up with something I can implement down the line.
+                  <span class=split-title svelte-19icql0>
+                    I need technical guidance.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+              <li class=tile svelte-19icql0 style=--tile-color: var(--color-green);>
+                <div class=tile-face svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=tile-collapsed svelte-19icql0>
+                      <span class=tile-collapsed-body svelte-19icql0>
+                        <span class=tile-title svelte-19icql0>
+                          <h3 >
+                            I'm a business owner.
+                        <span class=tile-description svelte-19icql0>
+                          <p >
+                            I'd like to partner with Peabody House to elevate myself online.
+                      <span class=cta tile-cta svelte-19icql0>
+                        How big is your business?
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I have a few employees, or I’m just going solo.
+                  <span class=split-title svelte-19icql0>
+                    I own a small business.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=split split-a svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I employ 10 to about 100 people.
+                  <span class=split-title svelte-19icql0>
+                    I own a medium-sized business.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=ghost svelte-19icql0>
+                <div class=split split-b svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I have well over 100 employees.
+                  <span class=split-title svelte-19icql0>
+                    I own a large business.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+              <li class=tile svelte-19icql0 style=--tile-color: var(--color-red);>
+                <div class=tile-face svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=tile-collapsed svelte-19icql0>
+                      <span class=tile-collapsed-body svelte-19icql0>
+                        <span class=tile-title svelte-19icql0>
+                          <h3 >
+                            I'm a freelancer.
+                        <span class=tile-description svelte-19icql0>
+                          <p >
+                            I'm curious if I can subcontract with Peabody House.
+                      <span class=cta tile-cta svelte-19icql0>
+                        What's your thing?
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I went to design school and I’d love to create some brand worlds with Peabody House.
+                  <span class=split-title svelte-19icql0>
+                    I am a designer.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=split split-a svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I know a thing or two about code and I'd like to see if I can write some for Peabody House.
+                  <span class=split-title svelte-19icql0>
+                    I am a developer.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+                <div class=ghost svelte-19icql0>
+                <div class=split split-b svelte-19icql0>
+                  <button class=card-trigger svelte-19icql0>
+                    <span class=card-view svelte-19icql0>
+                      <span class=split-desc svelte-19icql0>
+                        I know what users want and I’d like Peabody House's clients to know that too.
+                  <span class=split-title svelte-19icql0>
+                    I am a UX or a content strategist.
+                  <form class=card-form svelte-19icql0>
+                    <button class=card-back svelte-19icql0 aria-label=Back to card>
+                      ×
+                    <input class=card-field svelte-19icql0>
+                    <input class=honeypot svelte-19icql0>
+                    <textarea class=card-field card-message svelte-19icql0>
+                    <div class=card-foot svelte-19icql0>
+                      <p class=card-error svelte-19icql0>
+                      <div class=card-count svelte-19icql0>
+                        0/150
+                    <button class=cta card-send svelte-19icql0>
+                      Quick send
+                  <div class=card-success svelte-19icql0>
+                    <span class=card-success__text svelte-19icql0>
+                      Message sent.
+                      <br class=svelte-19icql0>
+                      <br class=svelte-19icql0>
+                      Thanks for reaching out! We'll be in touch soon.
+            <a href=/contact/ class=tile-contact-cta cta-host>
+              Looking for something else? Let us know.
+              <span class=cta cta--inverted cta-text svelte-19icql0>
+                Get in touch
+        <footer class=grid js-line-displacement svelte-352yma>
+          <div class=content svelte-352yma>
+            <span class=reserved h2 svelte-352yma>
+              ®
+            <a class=logo svelte-352yma href=/>
+              <img src=/logo.svg class=svelte-352yma>
+            <p class=copyright h2 svelte-352yma>
+              2026
+              <br class=svelte-352yma>
+              Peabody House
+            <nav class=links svelte-352yma>
+              <a href=https://instagram.com/peabodyhouse.studio>
+                Instagram
+              <a href=https://tiktok.com/@peabodyhouse>
+                TikTok
+              <a href=https://www.linkedin.com/company/peabodyhouse/>
+                LinkedIn
+              <a href=/a11y-statement/ class=cta>
+                A11y
+            <button class=top svelte-352yma>
+              <svg class=eye-icon>
+              <span class=svelte-352yma>
+                Back to top.

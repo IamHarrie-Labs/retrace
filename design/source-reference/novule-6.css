@@ -1,0 +1,40 @@
+
+/* the hero cube rests slightly tilted, so you look down a little onto its wine top.
+   -7deg default. -4deg barely, -12deg more. 0deg to switch it off. */
+:root{
+  --cube-tilt:-6deg;
+  /* how far the cube and its rug sit down: bigger % = lower. 3% default */
+  --cube-tilt-shift:3%;
+}
+@media (min-width:768px){
+  #novule-cube .fb-cube{rotate:x var(--cube-tilt)}
+  #novule-cube .fb-mid{translate:0 var(--cube-tilt-shift)}
+}
+/* the moving copy of the cube sits above the page while it travels */
+.cr-actor{position:fixed;inset:0;z-index:999;pointer-events:none;perspective:1700px;display:none}
+.cr-cube{position:absolute;left:0;top:0;width:var(--s);height:var(--s);transform-style:preserve-3d}
+.cr-cube .cr-in{position:absolute;inset:0;transform-style:preserve-3d}
+.cr-f{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;background:hsl(var(--white-hsl));box-shadow:inset 0 0 0 3px hsl(var(--darkAccent-hsl))}
+.cr-f .cr-pic{position:absolute;left:8%;top:7%;right:8%;bottom:19%;border-radius:6px;overflow:hidden;box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl))}
+.cr-f .cr-pic img,.cr-flap .cr-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.cr-f .cr-nm{position:absolute;left:0;right:0;bottom:5%;text-align:center;font-family:var(--heading-font-font-family);font-size:calc(var(--s) * .062);line-height:1;color:hsl(var(--darkAccent-hsl));transform:rotate(-2deg)}
+.cr-f.cr-top{background:hsl(var(--accent-hsl));box-shadow:none;overflow:hidden}
+.cr-f.cr-top.cr-has{background:none}
+/* the boarding pass copy that rides on the lid */
+.cr-tkw{position:absolute;left:0;top:0;transform-origin:0 0}
+.cr-actor .cr-det{opacity:var(--crd,1)!important}
+.cr-top .cr-root::after{display:none!important}
+.cr-f.cr-bot{background:hsl(var(--darkAccent-hsl))}
+/* the five pieces the box opens into */
+.cr-flap{position:absolute;left:0;top:0;transform-style:preserve-3d;display:none}
+.cr-flap .cr-side{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.cr-flap .cr-front{background:hsl(var(--white-hsl));box-shadow:inset 0 0 0 3px hsl(var(--darkAccent-hsl))}
+.cr-flap .cr-pic{position:absolute;overflow:hidden;box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl))}
+.cr-flap .cr-tint{position:absolute;inset:0;background:hsl(var(--accent-hsl));mix-blend-mode:multiply;opacity:0}
+.cr-flap .cr-back{transform:rotateX(180deg);display:grid;place-items:center;background:hsl(var(--lightAccent-hsl));color:hsl(var(--darkAccent-hsl));white-space:nowrap}
+.cr-flap.cr-lid .cr-front{background:none;box-shadow:none;overflow:visible}
+/* while it travels, your real cube and the Spotlight cards wait underneath */
+html body #novule-cube.cr-rolling .fb-cube,
+html body #novule-cube.cr-rolling .fb-say{opacity:0!important;transition:opacity .15s}
+html body #novule-hero#novule-hero.cr-landing li.list-item{opacity:0!important}
+html body #novule-hero#novule-hero li.list-item{transition:opacity .25s ease}

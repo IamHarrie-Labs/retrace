@@ -1,0 +1,130 @@
+
+/* =====================================================================
+   SOFT TOUCH · less techy layer for the lined cube · Novule · v1.0
+   Sits after the cube header code. Same layout, same words, same colours.
+   What changes:
+     1  No more Figma-style corner squares on the cube, cards and note
+     2  Rounded corners on the cube faces, cards, buttons and bubbles
+     3  Labels in your own fonts, sentence case, no code-style numbers
+     4  Tutors in full warm colour on every face
+     5  The connecting lines go; the cards float on their own
+     6  A little bounce: the cube squashes as it lands, the cards pop in
+     7  Soft corners on the rug, a slight tilt on the cards, a calmer hint line
+   ===================================================================== */
+#novule-cube{
+  --st-r:22px;                     /* card and button roundness */
+  --st-face-r:14px;                /* cube face roundness (keep small so the edges still meet) */
+  --st-label:600 13px/1 var(--fb-body);
+  --st-soft:0 2px 4px hsla(var(--darkAccent-hsl),.10),0 20px 36px -18px hsla(var(--darkAccent-hsl),.45);
+}
+
+/* ---------- 1 + 2 + 4: the cube ---------- */
+html body #novule-cube .cs-photo .fb-fc{border-radius:var(--st-face-r)!important;box-shadow:inset 0 0 0 1.5px hsla(var(--darkAccent-hsl),.18)!important;overflow:hidden!important}
+html body #novule-cube .cs-photo .fb-fc::after{display:none!important}
+html body #novule-cube .cs-photo .fb-fc img{border-radius:calc(var(--st-face-r) - 4px)!important;box-shadow:none!important}
+html body #novule-cube .cs-photo .fb-fc.side img{filter:none!important}
+html body #novule-cube .cs-photo .fb-fc.side::before{background:hsl(var(--darkAccent-hsl))!important;mix-blend-mode:normal!important;opacity:.08!important;border-radius:calc(var(--st-face-r) - 4px)}
+html body #novule-cube .cs-photo .fb-shade{border-radius:var(--st-face-r)!important}
+/* the label under each photo: just the language, in your font */
+html body #novule-cube .cs-photo .fb-fc em{border-top:0!important;justify-content:center!important;font:var(--st-label)!important;letter-spacing:.01em!important;text-transform:none!important;color:hsl(var(--accent-hsl))!important}
+html body #novule-cube .cs-photo .fb-fc em::after{content:none!important}
+/* the lid: plain wine, rounded, no squares */
+html body #novule-cube .cs-photo .fb-cube::before{background:hsl(var(--accent-hsl))!important;border-radius:var(--st-face-r);box-shadow:none!important}
+
+/* ---------- 3 + 5: the two cards ---------- */
+@media (min-width:768px){
+  html body #novule-cube .fb-left::before,
+  html body #novule-cube .fb-right::before{border-radius:var(--st-r)!important;box-shadow:var(--st-soft)!important}
+  html body #novule-cube .fb-left::before{background:hsl(var(--lightAccent-hsl))!important}
+  html body #novule-cube .fb-right::before{background:hsl(var(--accent-hsl))!important}
+  /* labels: your body font, sentence case */
+  html body #novule-cube .fb-left::after,
+  html body #novule-cube .fb-right::after{font:var(--st-label)!important;letter-spacing:.01em!important;text-transform:none!important;opacity:.85!important}
+  html body #novule-cube .fb-left::after{content:"in English"!important}
+  html body #novule-cube .fb-right::after{content:"your first word"!important}
+  /* no lines joining the cards to the cube */
+  html body #novule-cube .fb-left .x3w::after,
+  html body #novule-cube .fb-right .x3w::after{content:none!important}
+  /* the little note: a soft rounded bubble, no leader line */
+  html body #novule-cube .fb-meta{outline:0!important;border-radius:18px!important;box-shadow:var(--st-soft)!important;padding:12px 18px!important}
+  html body #novule-cube .fb-meta::before,
+  html body #novule-cube .fb-meta::after{display:none!important}
+  html body #novule-cube .fb-meta .fb-m2{font:var(--st-label)!important;letter-spacing:.01em!important;text-transform:none!important;opacity:.7}
+}
+
+/* ---------- 2: buttons and bubbles back to soft shapes ---------- */
+html body #novule-cube .fb-btn{border-radius:999px!important;outline:0!important;box-shadow:0 4px 0 hsl(var(--darkAccent-hsl))!important;margin-right:56px!important}
+html body #novule-cube .fb-btn:after{left:calc(100% + 6px)!important;width:48px!important;height:48px!important;border-radius:50%!important;outline:0!important;background:hsl(var(--lightAccent-hsl))!important;box-shadow:0 4px 0 hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .fb-btn:hover:after{transform:rotate(-35deg)!important}
+html body #novule-cube .fb-dots{outline:0!important;background:none!important;gap:8px!important}
+html body #novule-cube .fb-dots button{width:46px!important;height:46px!important;border-radius:50%!important;border:0!important;box-shadow:inset 0 0 0 1.5px hsla(var(--accent-hsl),.35)!important;font:700 13px/1 var(--fb-body)!important;transition:transform .35s cubic-bezier(.34,1.56,.64,1),background-color .2s!important}
+html body #novule-cube .fb-dots button:hover{transform:translateY(-3px)!important}
+html body #novule-cube .fb-dots button.on{box-shadow:none!important}
+html body #novule-cube .fb-say{border-radius:22px 22px 22px 6px!important;outline:0!important;box-shadow:var(--st-soft),inset 0 0 0 1.5px hsla(var(--accent-hsl),.25)!important}
+html body #novule-cube .fb-say .fb-pl{border-radius:50%!important}
+html body #novule-cube .fb-say .fb-st small{font:var(--st-label)!important;font-size:11px!important;letter-spacing:.01em!important;text-transform:none!important}
+
+/* ---------- 7: small finishing touches ---------- */
+/* the rug gets soft corners too */
+html body #novule-cube .cs-photo .fb-cube::after{border-radius:28px!important}
+/* the two cards sit at a slight, friendly tilt */
+@media (min-width:768px){
+  html body #novule-cube .fb-left{rotate:-3deg}
+  html body #novule-cube .fb-right{rotate:3deg}
+}
+/* the hint under the headline: calmer, sentence case */
+html body #novule-cube .fb-tip{text-transform:none!important;letter-spacing:.01em!important;font:var(--st-label)!important;opacity:.6}
+
+/* ---------- 6: a little bounce ---------- */
+@keyframes stLand{0%{scale:1 1}35%{scale:1.035 .965}65%{scale:.985 1.015}100%{scale:1 1}}
+@keyframes stPop{0%{scale:.86}55%{scale:1.06}100%{scale:1}}
+html body #novule-cube .fb-mid.st-land{animation:stLand .55s ease-out}
+html body #novule-cube .fb-side.st-pop{animation:stPop .5s cubic-bezier(.34,1.56,.64,1)}
+@media (prefers-reduced-motion:reduce){html body #novule-cube .fb-mid.st-land,html body #novule-cube .fb-side.st-pop{animation:none}}
+
+/* ---------- PRINT: a bold outline and a solid offset shadow on the cards, cube, buttons and bubble ---------- */
+@media (min-width:768px){
+  html body #novule-cube .fb-left::before,html body #novule-cube .fb-right::before{border-radius:20px!important;
+    box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl)),7px 7px 0 2.5px hsl(var(--darkAccent-hsl))!important}
+  html body #novule-cube .fb-meta{box-shadow:0 0 0 2px hsl(var(--darkAccent-hsl)),5px 5px 0 2px hsl(var(--darkAccent-hsl))!important}
+}
+html body #novule-cube .cs-photo .fb-fc{box-shadow:inset 0 0 0 2.5px hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .cs-photo .fb-fc img{box-shadow:0 0 0 2px hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .cs-photo .fb-cube::before{box-shadow:inset 0 0 0 2.5px hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .fb-btn{box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl)),5px 5px 0 2.5px hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .fb-btn:after{box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl)),4px 4px 0 2.5px hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .fb-dots button{box-shadow:0 0 0 2px hsl(var(--darkAccent-hsl)),3px 3px 0 2px hsl(var(--darkAccent-hsl))!important;background:hsl(var(--white-hsl))!important}
+html body #novule-cube .fb-dots button.on{background:hsl(var(--lightAccent-hsl))!important;color:hsl(var(--darkAccent-hsl))!important}
+html body #novule-cube .fb-say{box-shadow:0 0 0 2px hsl(var(--darkAccent-hsl)),4px 4px 0 2px hsl(var(--darkAccent-hsl))!important}
+
+/* ---------- TICKETS: the two words sit on admission tickets with round notches and a perforation ---------- */
+@media (min-width:768px){
+html body #novule-cube .fb-left::before{background:radial-gradient(circle at 0 58%,hsl(var(--white-hsl)) 0 14px,hsl(var(--darkAccent-hsl)) 14px 16.5px,transparent 17px),radial-gradient(circle at 100% 58%,hsl(var(--white-hsl)) 0 14px,hsl(var(--darkAccent-hsl)) 14px 16.5px,transparent 17px),linear-gradient(90deg,transparent calc(100% - 46px),hsl(var(--darkAccent-hsl)) calc(100% - 46px) calc(100% - 44.5px),transparent calc(100% - 44.5px)) 0 0/100% 100% no-repeat,hsl(var(--lightAccent-hsl))!important;border-radius:14px!important}
+html body #novule-cube .fb-right::before{background:radial-gradient(circle at 0 58%,hsl(var(--white-hsl)) 0 14px,hsl(var(--darkAccent-hsl)) 14px 16.5px,transparent 17px),radial-gradient(circle at 100% 58%,hsl(var(--white-hsl)) 0 14px,hsl(var(--darkAccent-hsl)) 14px 16.5px,transparent 17px),linear-gradient(90deg,transparent 44.5px,hsla(var(--white-hsl),.4) 44.5px 46px,transparent 46px) 0 0/100% 100% no-repeat,hsl(var(--accent-hsl))!important;border-radius:14px!important}}
+
+/* straight tickets, and the note under the right ticket as plain text */
+@media (min-width:768px){
+  html body #novule-cube .fb-left,html body #novule-cube .fb-right{rotate:0deg!important}
+  html body #novule-cube .fb-meta{background:none!important;box-shadow:none!important;outline:0!important;padding:0!important;border-radius:0!important;min-width:0!important;align-items:flex-end!important;gap:4px!important}
+  html body #novule-cube .fb-meta .fb-m1{font-size:20px!important}
+}
+/* v3.3: the language you are on is the strongest button, not the faintest */
+html body #novule-cube .fb-dots button.on{background:hsl(var(--accent-hsl))!important;color:hsl(var(--white-hsl))!important;box-shadow:0 0 0 2px hsl(var(--darkAccent-hsl)),3px 3px 0 2px hsl(var(--darkAccent-hsl))!important}
+/* v3.3: the note under the right ticket, one shade darker so it sits firmly on the page */
+@media (min-width:768px){
+  html body #novule-cube .fb-meta .fb-m1{color:hsl(var(--darkAccent-hsl))!important;opacity:1!important}
+  html body #novule-cube .fb-meta .fb-m2{color:hsl(var(--darkAccent-hsl))!important;opacity:.75!important}
+}
+/* BUTTON COLOURS: --bb button, --bt its text, --ba the pebble, --bat the arrow. All from your palette */
+html body #novule-cube{--bb:hsl(var(--accent-hsl));--bt:hsl(var(--white-hsl));--ba:hsl(var(--lightAccent-hsl));--bat:hsl(var(--accent-hsl))}
+html body #novule-cube .fb-row .fb-btn{transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,background-color .3s,color .3s!important}
+
+/* ---------- PEBBLE THAT FILLS: the button, with a hand-made pebble arrow that pokes out past its edge.
+   On hover the pebble colour sweeps across and the words change colour ---------- */
+html body #novule-cube .fb-row .fb-btn{isolation:isolate;height:58px!important;padding:0 64px 0 28px!important;margin-right:26px!important;border-radius:999px!important;background:var(--bb)!important;color:var(--bt)!important}
+html body #novule-cube .fb-row .fb-btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:999px;background:var(--ba);clip-path:inset(0 0 0 100% round 999px);transition:clip-path .5s cubic-bezier(.65,0,.35,1)}
+html body #novule-cube .fb-row .fb-btn:hover::before{clip-path:inset(0 0 0 0 round 999px)}
+html body #novule-cube .fb-row .fb-btn:hover{color:var(--bat)!important}
+html body #novule-cube .fb-row .fb-btn:after{left:auto!important;right:-22px!important;top:50%!important;width:56px!important;height:56px!important;transform:translateY(-50%)!important;border-radius:58% 42% 46% 54%/50% 60% 40% 50%!important;background:var(--ba)!important;color:var(--bat)!important;box-shadow:0 0 0 2.5px hsl(var(--darkAccent-hsl)),4px 4px 0 2.5px hsl(var(--darkAccent-hsl))!important;outline:0!important;animation:wob 6s ease-in-out infinite alternate}
+html body #novule-cube .fb-row .fb-btn:hover:after{background:var(--bb)!important;color:var(--bt)!important;transform:translateY(-50%) rotate(-30deg)!important}
+@keyframes wob{0%{border-radius:58% 42% 46% 54%/50% 60% 40% 50%}50%{border-radius:46% 54% 58% 42%/58% 44% 56% 42%}100%{border-radius:52% 48% 42% 58%/44% 56% 48% 52%}}

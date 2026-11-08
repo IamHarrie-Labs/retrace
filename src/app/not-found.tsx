@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <div className="product-page"><h1>We couldn’t find<br /><em>that page.</em></h1><p className="my-6 max-w-lg text-sm leading-7 text-muted">The link may have changed. Your device histories are available from My devices once you connect and sign in.</p><Link href="/devices" className="action-button">Go to my devices ↗</Link></div>;}

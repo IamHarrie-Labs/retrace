@@ -1,0 +1,20 @@
+services:
+  retrace:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_RETRACE_PACKAGE_ID: ${NEXT_PUBLIC_RETRACE_PACKAGE_ID:?Set the published Retrace package ID}
+        NEXT_PUBLIC_RETRACE_REGISTRY_ID: ${NEXT_PUBLIC_RETRACE_REGISTRY_ID:?Set the Retrace Registry object ID}
+        NEXT_PUBLIC_DEMO_PASSPORT_ID: ${NEXT_PUBLIC_DEMO_PASSPORT_ID:-}
+        NEXT_PUBLIC_ENOKI_API_KEY: ${NEXT_PUBLIC_ENOKI_API_KEY:-}
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${NEXT_PUBLIC_GOOGLE_CLIENT_ID:-}
+    env_file: .env.local
+    environment:
+      RETRACE_DATA_DIR: /app/.data
+    ports:
+      - "3000:3000"
+    volumes:
+      - retrace-data:/app/.data
+    restart: unless-stopped
+volumes:
+  retrace-data:

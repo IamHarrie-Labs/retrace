@@ -1,0 +1,6 @@
+[package]
+name = "retrace"
+edition = "2024"
+
+[addresses]
+retrace = "0x0"

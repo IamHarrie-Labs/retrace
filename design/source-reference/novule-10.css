@@ -1,0 +1,112 @@
+
+.ff,.ff-fly{
+  --ff-wine:hsl(var(--accent-hsl));--ff-dark:hsl(var(--darkAccent-hsl));--ff-rose:hsl(var(--lightAccent-hsl));--ff-cream:hsl(var(--white-hsl));
+  --ff-blush:color-mix(in srgb,hsl(var(--lightAccent-hsl)) 36%,hsl(var(--white-hsl)));
+  --ff-ink2:color-mix(in srgb,hsl(var(--darkAccent-hsl)) 72%,hsl(var(--white-hsl)));
+  --ff-head:var(--heading-font-font-family);--ff-body:var(--body-font-font-family);
+  --ff-peb:58% 42% 46% 54%/50% 60% 40% 50%;
+}
+.ff{
+  /* SPACE ABOVE THE FAQ: the gap after the Spotlight. Bigger = more room for the flight */
+  --ff-space:clamp(8px,1.5vw,24px);
+  box-sizing:border-box;width:100%;margin-top:var(--ff-space);padding-top:40px;
+  display:grid;grid-template-columns:minmax(320px,440px) minmax(0,1fr);gap:clamp(28px,4vw,48px);align-items:stretch;
+  font-family:var(--ff-body);color:var(--ff-dark);
+}
+.ff *{box-sizing:border-box}
+.ff-lbl{font:700 11px/1 var(--ff-body);letter-spacing:.24em;text-transform:uppercase;color:var(--ff-wine)}
+
+/* ---------- the folder: as tall as the questions, top to bottom ---------- */
+.ff-fold{position:relative;min-height:500px}
+.ff{--ff-tab-h:40px}
+/* the folder shape (tab and body), cut by the script so it fits any width. The photo sits inside */
+.ff-shape{position:absolute;left:0;right:0;top:calc(var(--ff-tab-h) * -1);bottom:0;z-index:1;
+  filter:drop-shadow(1.5px 0 0 var(--ff-dark)) drop-shadow(-1.5px 0 0 var(--ff-dark)) drop-shadow(0 1.5px 0 var(--ff-dark)) drop-shadow(0 -1.5px 0 var(--ff-dark)) drop-shadow(5px 6px 0 var(--ff-dark))}
+.ff-sil{position:absolute;inset:0;background:var(--ff-rose)}
+.ff-front{position:absolute;left:0;right:0;top:calc(100% - var(--ff-pocket,190px));bottom:0;z-index:3;border-radius:22px 22px 26px 26px;background:var(--ff-blush);
+  box-shadow:0 0 0 1.5px var(--ff-dark),7px 9px 0 1.5px var(--ff-dark);padding:28px 30px 26px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.ff-front::before{content:"";position:absolute;left:18px;right:18px;top:13px;border-top:1.5px dashed color-mix(in srgb,hsl(var(--accent-hsl)) 40%,transparent)}
+.ff-front h2{margin:0!important;text-wrap:balance;font-family:var(--ff-head)!important;font-weight:400!important;font-size:clamp(32px,3vw,42px)!important;line-height:1.02!important;letter-spacing:-.01em;color:var(--ff-dark)!important}
+/* every "?" in the heading becomes the wine pebble */
+.ff-front .ff-qm{display:inline-grid;place-items:center;width:1.45em;height:1.45em;margin-left:.22em;vertical-align:.12em;font-size:.72em;line-height:1;
+  border-radius:var(--ff-peb);background:var(--ff-wine);color:var(--ff-cream);box-shadow:0 0 0 2px var(--ff-dark),3px 4px 0 2px var(--ff-dark)}
+
+/* ---------- the tutor photo: fills the folder shape (also the back of the flying pass) ---------- */
+.ff-card{position:absolute;inset:0;background:color-mix(in srgb,hsl(var(--darkAccent-hsl)) 15%,hsl(var(--white-hsl)))}
+.ff-card .c-im{position:absolute;inset:0;overflow:hidden}
+.ff-card .c-im img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.ff-sil > .ff-card{opacity:0;transition:opacity .35s}
+.ff-sil > .ff-card.on{opacity:1}
+
+/* the flying boarding pass (front) */
+.ff-fly{position:fixed;left:0;top:0;z-index:998;pointer-events:none;display:none;width:290px;height:350px;transform-style:preserve-3d}
+.ff-fly > *{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.ff-fly > .ff-card{transform:rotateY(180deg);background:none;filter:drop-shadow(1.5px 0 0 var(--ff-dark)) drop-shadow(-1.5px 0 0 var(--ff-dark)) drop-shadow(0 1.5px 0 var(--ff-dark)) drop-shadow(0 -1.5px 0 var(--ff-dark)) drop-shadow(5px 6px 0 var(--ff-dark))}
+.ff-fly > .ff-card .c-im{background:color-mix(in srgb,hsl(var(--darkAccent-hsl)) 15%,hsl(var(--white-hsl)))}
+.ff-pass{position:absolute;inset:0;color:var(--ff-cream);border-radius:28px;background:linear-gradient(var(--ff-rose) 48px,var(--ff-wine) 0);filter:drop-shadow(4px 5px 0 var(--ff-dark));
+  -webkit-mask:radial-gradient(circle at 0 48px,transparent 11px,#000 11.5px) 0 0/51% 100% no-repeat,radial-gradient(circle at 100% 48px,transparent 11px,#000 11.5px) 100% 0/51% 100% no-repeat;
+          mask:radial-gradient(circle at 0 48px,transparent 11px,#000 11.5px) 0 0/51% 100% no-repeat,radial-gradient(circle at 100% 48px,transparent 11px,#000 11.5px) 100% 0/51% 100% no-repeat}
+.ff-pass .p-e{height:48px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 20px;color:var(--ff-wine);font:700 8.5px/1 var(--ff-body);letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.ff-pass .p-r{display:flex;justify-content:space-between;align-items:center;margin:30px 20px 0;font:400 42px/1 var(--ff-head)}
+.ff-pass .p-r i{width:.62em;height:.62em;background:var(--ff-cream);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath transform='rotate(90 12 12)' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath transform='rotate(90 12 12)' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/%3E%3C/svg%3E") center/contain no-repeat}
+.ff-pass .p-t{margin:26px 20px 0;font:400 19px/1.15 var(--ff-head)}
+
+/* ---------- the departure board ---------- */
+.ff{--ff-board:hsl(var(--darkAccent-hsl));--ff-rowbg:color-mix(in srgb,hsl(var(--accent-hsl)) 32%,hsl(var(--darkAccent-hsl)));
+  --ff-tile:color-mix(in srgb,hsl(var(--darkAccent-hsl)) 70%,#000)}
+.ff-items{display:flex;flex-direction:column;justify-content:space-between;gap:10px;padding:16px;border-radius:24px;background:var(--ff-board);
+  box-shadow:0 0 0 1.5px var(--ff-dark),7px 9px 0 1.5px color-mix(in srgb,hsl(var(--darkAccent-hsl)) 60%,#000)}
+.ff-row{border-radius:14px;background:var(--ff-rowbg);transition:background-color .3s}
+.ff-row:hover{background:color-mix(in srgb,hsl(var(--accent-hsl)) 45%,hsl(var(--darkAccent-hsl)))}
+.ff-btn{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;padding:16px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ff-btn:focus-visible{outline:2px solid var(--ff-rose);outline-offset:-4px;border-radius:12px}
+/* the split-flap number tiles */
+.ff-flap{display:flex;gap:3px;perspective:300px}
+.ff-flap span{position:relative;width:30px;height:42px;border-radius:6px;background:var(--ff-tile);color:var(--ff-rose);display:grid;place-items:center;font:400 25px/1 var(--ff-head)}
+.ff-flap span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:color-mix(in srgb,hsl(var(--darkAccent-hsl)) 40%,#000)}
+.ff-flap span.go{animation:ffFlap .5s cubic-bezier(.3,.7,.4,1)}
+@keyframes ffFlap{0%{transform:rotateX(0)}40%{transform:rotateX(90deg)}41%{transform:rotateX(-90deg)}100%{transform:rotateX(0)}}
+.ff-q{font:500 clamp(17px,1.5vw,20px)/1.3 var(--ff-body);color:var(--ff-cream);letter-spacing:.01em;perspective:600px}
+/* the word flip: each word drops into place like a board flap */
+.ff-q .ff-w{display:inline-block;white-space:pre;transform-origin:50% 0}
+.ff-q.run .ff-w{animation:ffWord .5s cubic-bezier(.3,.7,.4,1) both}
+@keyframes ffWord{0%{transform:rotateX(-90deg);opacity:0}60%{opacity:1}100%{transform:none;opacity:1}}
+/* the little light: glows on the open question */
+.ff-led{width:11px;height:11px;border-radius:50%;background:color-mix(in srgb,hsl(var(--accent-hsl)) 60%,hsl(var(--darkAccent-hsl)));box-shadow:0 0 0 2px var(--ff-tile);transition:background-color .4s,box-shadow .4s}
+.ff-row.open .ff-led{background:var(--ff-rose);box-shadow:0 0 0 2px var(--ff-tile),0 0 10px 1px color-mix(in srgb,hsl(var(--lightAccent-hsl)) 70%,transparent)}
+/* the answer slides open */
+.ff-ex{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.22,1,.36,1)}
+.ff-ex>div{overflow:hidden;min-height:0}
+.ff-a{margin:0 18px 18px;padding:18px 20px;border-radius:10px;background:var(--ff-cream);color:var(--ff-dark);font-size:16px;line-height:1.55}
+.ff-a p{margin:0 0 .8em;color:inherit!important}.ff-a p:last-child{margin-bottom:0}
+.ff-a a{color:var(--ff-wine)!important;text-decoration:underline}
+.ff-row.open .ff-ex{grid-template-rows:1fr}
+
+:is(#novule-faq,#folder-faq).ff-ready .list-section-title,
+:is(#novule-faq,#folder-faq).ff-ready .user-items-list-item-container{display:none!important}
+html body #novule-hero .ff-moving{opacity:0!important;transition:none!important}
+
+/* tablets and phones: the folder sits above the questions */
+@media (max-width:900px){
+  .ff{grid-template-columns:minmax(0,1fr)}
+  .ff-fold{max-width:440px;width:100%;min-height:520px}
+  .ff-items{margin-top:12px}
+}
+@media (max-width:640px){
+  .ff{padding-top:44px}
+  .ff{--ff-pocket:160px}
+  .ff-front{padding:24px 22px}
+  .ff-items{padding:12px}
+  .ff-btn{gap:12px;padding:14px 12px}
+  .ff-flap span{width:24px;height:34px;font-size:20px}
+  .ff-a{margin:0 12px 12px;padding:16px}
+}
+/* phones: more space above, white space either side, folder and board the same width */
+@media (max-width:767px){
+  html body .ff{padding-top:88px!important;padding-left:24px!important;padding-right:24px!important}
+  html body .ff-fold{max-width:none!important;width:100%!important}
+}
+/* no flash of the plain List section while the page loads */
+@keyframes ffShow{to{visibility:visible}}
+body:not(.sqs-edit-mode-active) :is(#novule-faq,#folder-faq):not(.ff-ready) .content-wrapper{visibility:hidden;animation:ffShow 0s 4s forwards}
+@media (prefers-reduced-motion:reduce){.ff-ex{transition:none}.ff-q.run .ff-w,.ff-flap span.go{animation:none}}
