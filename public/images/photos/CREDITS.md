@@ -10,7 +10,7 @@ Every photo shows a real Apple MacBook. The example story follows a MacBook Pro 
 | macbook-silver.jpg | Silver MacBook, half open | Maxim Hopman | Unsplash License | https://unsplash.com/photos/Hin-rzhOdWs |
 | macbook-air-table.jpg | Closed MacBook Air on a wooden table | Yudhajit Ghosh | Unsplash License | https://unsplash.com/photos/WGFQscKlxgQ |
 | macbook-technician.jpg | Technician repairing a MacBook | Revendo | Unsplash License | https://unsplash.com/photos/M7_rJ4LF-jk |
-| macbook-question.jpg | Woman working on a MacBook by a window | Daniel Thomas | Unsplash License | https://unsplash.com/photos/HA-0i0E7sq4 |
+| macbook-latte.jpg | MacBook and a latte on a wooden table | Nolan Issac | Unsplash License | https://unsplash.com/photos/It0DCaCBr40 |
 | macbook-pro-plant.jpg | MacBook Pro next to a plant | James McKinven | Unsplash License | https://unsplash.com/photos/tpuAo8gVs58 |
 
 Images are resized only.
