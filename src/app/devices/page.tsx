@@ -57,11 +57,11 @@ function DevicesContent() {
   return (
     <div className="product-page space-y-10">
       <section className="device-page-heading">
-        <div className="page-heading"><h1>Your devices.<br /><em>Their stories.</em></h1><p>Open a passport to see what happened before,<br className="desktop-break" /> or give another laptop a place to keep its history.</p></div>
+        <div className="page-heading"><h1>Your laptops<br /><em>and their history.</em></h1><p>Open a passport to see what has happened to a laptop,<br className="desktop-break" /> or register a new one.</p></div>
         <Link href="/demo" className="text-link">Explore a sample device ↗</Link>
       </section>
 
-      {!account && <div className="signin-panel"><div className="signin-panel-copy"><h2>Your next chapter<br />starts here.</h2><p className="mb-6 text-sm leading-7 text-muted">Connect a Sui wallet, or sign in with Google if it is offered, to register a laptop or open a passport you already hold. A separate signed message proves the account is yours.</p><WalletConnect /><p className="mt-5 text-xs text-muted">Just looking around? <Link href="/demo" className="underline underline-offset-4">Try the wallet-free example.</Link></p></div><div className="signin-panel-art"><BrandMark /></div></div>}
+      {!account && <div className="signin-panel"><div className="signin-panel-copy"><h2>Sign in to see<br />your laptops.</h2><p className="mb-6 text-sm leading-7 text-muted">Connect a Sui wallet to register a laptop or open one you already own. You can use Google instead if the button is there. Then you sign a short message, which proves the account is yours and costs nothing.</p><WalletConnect /><p className="mt-5 text-xs text-muted">Just looking? <Link href="/demo" className="underline underline-offset-4">See the example, no wallet needed.</Link></p></div><div className="signin-panel-art"><BrandMark /></div></div>}
       {account && !signedIn && (
         <Card className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm text-muted">Sign a message to prove this wallet is yours. It is free and moves no funds.</p>
@@ -78,8 +78,8 @@ function DevicesContent() {
             </div>
             {err && <div role="alert"><p className="text-sm text-warn">{err}</p><Button className="mt-3" variant="ghost" onClick={() => { setErr(null); void load(); }}>Try again</Button></div>}
             {!passports && !err && <div role="status" aria-label="Loading your devices"><div className="skeleton" /><div className="skeleton short" /><p className="text-sm text-muted">Reading your device passports…</p></div>}
-            {passports?.length === 0 && <p className="text-sm text-muted">No devices yet. Register one to start its memory.</p>}
-            {overdue && <p className="mb-2 rounded-sm border border-warn/40 bg-warn/5 p-3 text-sm">A repair is waiting for its follow-up. Did the fix hold? Recording the outcome is how every future diagnosis for this model gets better.</p>}
+            {passports?.length === 0 && <p className="text-sm text-muted">No laptops yet. Register one below to start its history.</p>}
+            {overdue && <p className="mb-2 rounded-sm border border-warn/40 bg-warn/5 p-3 text-sm">One of your repairs is due a check-in. Did the fix hold? Your answer improves the advice for everyone with this model.</p>}
             <ul className="divide-y divide-line">
               {passports?.map((p) => (
                 <li key={p.id}>
@@ -165,13 +165,13 @@ function MintCard({ onMinted }: { onMinted: () => void }) {
             <option value={OTHER}>Another model…</option>
           </select>
           {model === OTHER && <input aria-label="Model name" maxLength={120} disabled={locked} className={`${inputCls} mt-2`} value={customModel} onChange={(e) => setCustomModel(e.target.value)} placeholder="Model as printed on the device" />}
-          {model === OTHER && <p className="mt-1 text-xs text-muted">Unlisted models keep their own history, but can&apos;t share or receive lessons from other owners yet.</p>}
+          {model === OTHER && <p className="mt-1 text-xs text-muted">If your model isn&apos;t listed, it still gets its own history. It just won&apos;t swap tips with other owners of the same model yet.</p>}
         </div>
         <div><label htmlFor="device-serial">Serial number</label><input id="device-serial" maxLength={120} disabled={locked} className={inputCls} value={serial} onChange={(e) => setSerial(e.target.value)} placeholder="On the label underneath, e.g. PF-1ABC23" autoComplete="off" required />
-          <p className="mt-1 text-xs text-muted">Only a keyed hash goes onchain. One passport per device: a serial can&apos;t be registered twice.</p></div>
+          <p className="mt-1 text-xs text-muted">The serial number never goes on the blockchain. Retrace stores a scrambled fingerprint of it instead, and each serial can only be registered once.</p></div>
         {balance && <p className="text-xs text-muted">{balance.sponsored ? "Network fees are covered by Retrace." : <>Wallet balance {balance.sui.toFixed(3)} SUI (read via Tatum){!balance.enough && <span className="text-warn">. You need about 0.01 SUI for the network fee.</span>}</>}</p>}
         <Button type="submit" disabled={isPending || (!submittedDigest && (!make.trim() || !finalModel || !serial.trim()))} className="w-full">
-          {isPending ? "Registering…" : submittedDigest ? "Check confirmation" : "Mint device passport"}
+          {isPending ? "Registering…" : submittedDigest ? "Check confirmation" : "Create the passport"}
         </Button>
         {duplicate && <div role="alert" className="rounded-sm border border-warn/40 p-3 text-sm">This laptop already has a passport. Its history stays with it, so ask the current holder to hand it over to you. <Link className="underline" href={`/passport/${duplicate}`}>View its public summary</Link></div>}
         {submittedDigest && <p className="text-xs">A registration is awaiting confirmation. <Ext href={suiscan.tx(submittedDigest)}>Inspect the submitted transaction</Ext></p>}

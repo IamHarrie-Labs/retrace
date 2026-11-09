@@ -12,7 +12,7 @@ const chapters: Chapter[] = [
   { name: "The symptom", record: "Symptom", verb: "Know", note: "Charging stops when the cable moves.", next: "Log the symptom", img: "/images/photos/thinkpad-on-desk.jpg", alt: "A Lenovo ThinkPad open on a desk" },
   { name: "The repair", record: "Repair", verb: "Keep", note: "Battery replaced. The fault came back after 21 days.", next: "Record the outcome", img: "/images/photos/thinkpad-inside.jpg", alt: "Inside a ThinkPad T470p with the bottom cover removed" },
   { name: "The lesson", record: "Lesson", verb: "Learn", note: "A new battery and a known-good charger didn’t fix it. Check the DC jack.", next: "Inspect the DC jack", img: "/images/photos/thinkpad-board.jpg", alt: "A ThinkPad X220 motherboard inside its case" },
-  { name: "The handover", record: "Handover", verb: "Pass", note: "The buyer gets the passport, the history and the advice.", next: "Send a claim link" },
+  { name: "The handover", record: "Handover", verb: "Pass", note: "The buyer gets the passport with every repair already in it.", next: "Send a claim link" },
 ];
 
 const WORD_SECONDS = 3.5;
@@ -143,10 +143,10 @@ export function CubeHero() {
       <div className="ch-stage" ref={stage} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp} onPointerLeave={() => { st.current.mx = 0; st.current.my = 0; }}>
         <div className="ch-intro">
           <h1>Know what&rsquo;s been tried before you try it again.</h1>
-          <p>Repair memory that stays with the laptop, learns from every outcome and passes to the next owner.</p>
+          <p>Retrace keeps a record of every fix a laptop gets, and whether it worked. The next repair starts from there, and when you sell the laptop, the buyer gets the record too.</p>
           <div className="ch-row">
             <Link href="/devices" className="pebble-btn">Start a passport<span className="peb" aria-hidden="true"><ArrowRight size={22} weight="bold" /></span></Link>
-            <Link href="/demo" className="ch-alt">Try the story</Link>
+            <Link href="/demo" className="ch-alt">See an example</Link>
           </div>
           <span className="ch-tip" style={{ opacity: tipGone ? 0 : undefined }}>Drag or tap the cube to turn it</span>
         </div>

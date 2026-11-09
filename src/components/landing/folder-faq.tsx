@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const faqs: [string, string][] = [
-  ["Do I need a wallet to try it?", "The interactive story works without a wallet. Creating or transferring a real passport needs a Sui wallet and your approval, or Google sign-in where it is switched on."],
-  ["Does it diagnose my laptop?", "Retrace suggests the next check from recorded symptoms and repair outcomes. A qualified technician still has to assess the hardware."],
-  ["What happens when I sell it?", "Send the buyer a claim link. They claim, you transfer in one click, and Retrace checks the new owner through Tatum before serving the history. A copy someone already downloaded can't be erased."],
-  ["Who can read the records?", "The current passport holder, and anyone they share a 7-day read-only link with. Records sit in Retrace's operator-managed Walrus Memory account, and the operator can read them."],
-  ["What does the evidence prove?", "Roles and evidence are declared by the holder unless a repair shop has signed the record. A storage receipt proves storage; it doesn't prove a repair worked."],
+  ["Do I need a wallet to try it?", "No. The example on this site runs without one. To register a real laptop or hand one over, you need a Sui wallet, or Google sign-in where it's turned on."],
+  ["Does it diagnose my laptop?", "It tells you what to check next, based on the symptoms and on which repairs worked or failed. It can't see inside your laptop, so a technician still needs to look at it."],
+  ["What happens when I sell it?", "You send the buyer a link. They open it and sign in, then you approve the transfer. From then on only the buyer can see the full history. If someone downloaded a copy before the sale, they still have it."],
+  ["Who can read the records?", "You can, while you own the laptop, and so can anyone you send a 7-day read-only link to. The records are kept in a Walrus Memory account that Retrace runs, so Retrace can read them too."],
+  ["Can I trust what a record says?", "As far as you trust the person who wrote it. Owners fill in their own records, and Retrace marks those as reported. A record signed by a repair shop shows the shop's name. Walrus proves when a record was saved and that it hasn't been changed since."],
 ];
 
 // the folder outline: a tab on the top left, rounded body

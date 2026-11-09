@@ -22,7 +22,7 @@ export function LiveBand() {
       <dl>
         <div><dt>Repair records on Walrus</dt><dd>{p ? fmt(p.memory.total) : failed ? "—" : <span className="lb-sk" />}</dd></div>
         <div><dt>Laptops with a history</dt><dd>{p ? fmt(p.memory.devices) : failed ? "—" : <span className="lb-sk" />}</dd></div>
-        <div><dt>Sui checkpoint via Tatum</dt><dd>{p ? fmt(p.tatum.latestCheckpoint) : failed ? "—" : <span className="lb-sk" />}</dd></div>
+        <div><dt>Latest Sui checkpoint, read through Tatum</dt><dd>{p ? fmt(p.tatum.latestCheckpoint) : failed ? "—" : <span className="lb-sk" />}</dd></div>
       </dl>
       <Link href="/proof" className="lb-link">Check the proof <ArrowUpRight size={16} /></Link>
     </section>

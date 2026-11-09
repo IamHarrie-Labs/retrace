@@ -41,7 +41,7 @@ export default function ClaimPage() {
       <div>
         <Label>Device handover</Label>
         <h1 className="text-3xl font-semibold tracking-tight">{data ? `${data.passport.make} ${data.passport.model}` : err ? "This link can’t be opened." : "Opening the handover…"}</h1>
-        {data && <p className="mt-1 text-sm text-muted">Offered by <span className="font-mono">{short(data.passport.owner)}</span>. When the seller confirms, this laptop&apos;s full repair memory moves to you.</p>}
+        {data && <p className="mt-1 text-sm text-muted">Offered by <span className="font-mono">{short(data.passport.owner)}</span>. When the seller confirms, this laptop&apos;s full repair history moves to you.</p>}
       </div>
       {err && <Card><p role="alert" className="text-sm text-warn">{err}</p></Card>}
       {data && <SummaryCard summary={data.summary} />}
@@ -60,7 +60,7 @@ export default function ClaimPage() {
           {data.claimedBy && !mine && <p className="mt-3 text-sm text-warn">Another account has already claimed this link. Ask the seller for a new one if that wasn&apos;t you.</p>}
           {(mine || done) && (
             <div className="mt-4 rounded-sm border border-good/40 bg-good/5 p-3 text-sm">
-              <b>You&apos;re on the list.</b> The seller now sees your account and can transfer the passport. Once it confirms, the full history and learned diagnosis open for you under <Link href="/devices" className="underline">My devices</Link>.
+              <b>You&apos;re on the list.</b> The seller now sees your account and can transfer the passport. Once it confirms, the full history and advice open for you under <Link href="/devices" className="underline">My devices</Link>.
               <div className="mt-2"><Link className="text-link" href={`/passport/${data.passport.id}`}>Open the passport →</Link></div>
             </div>
           )}

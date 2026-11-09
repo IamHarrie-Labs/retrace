@@ -19,8 +19,8 @@ const sections: { tag: string; title: string; who: string; body: string[] }[] = 
     title: "Repair records",
     who: "The current owner, and anyone they share a link with",
     body: [
-      "Symptoms, repairs, outcomes, and optional cost and shop name are stored in Retrace's operator-managed Walrus Memory account. Retrace keeps a working copy in its server database to track each storage receipt.",
-      "Retrace serves records only to the wallet that Tatum reports as the passport's current owner, or to someone holding that owner's live share link. The operator can read them.",
+      "Symptoms, repairs, outcomes, and optional cost and shop name are stored in a Walrus Memory account that Retrace runs. Retrace keeps a working copy in its server database to track each storage receipt.",
+      "Retrace shows the records only to the wallet that owns the passport right now, which it checks through Tatum, or to someone with that owner's share link. Retrace itself can also read them.",
       "Role and evidence are declared by the holder unless a repair shop has signed the record.",
     ],
   },
@@ -29,7 +29,7 @@ const sections: { tag: string; title: string; who: string; body: string[] }[] = 
     title: "Shared lessons",
     who: "Used to improve advice for everyone",
     body: [
-      "When you save a resolved repair you can choose to share a model-level lesson, such as which fix worked for a symptom on a ThinkPad T480. Device notes, costs and wallet details are left out.",
+      "When you save a resolved repair you can choose to share a tip for that model, such as which fix worked for a symptom on a ThinkPad T480. Device notes, costs and wallet details are left out.",
       "Leave the box unticked and nothing from your record is shared.",
     ],
   },
@@ -50,7 +50,7 @@ const sections: { tag: string; title: string; who: string; body: string[] }[] = 
     body: [
       "Signing in asks your wallet to sign a message. It costs nothing and moves no funds. Retrace then sets a session cookie that only the server can read, valid for 12 hours.",
       "Your browser keeps a few settings locally, such as the pause-motion switch and an unfinished transaction, so a reload does not lose them.",
-      "There are no analytics, advertising or tracking scripts. Fonts are served from Retrace, not from a third party.",
+      "There are no analytics, ads or tracking scripts, and fonts load from Retrace's own server.",
     ],
   },
   {
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
       <div className="page-heading">
         <p className="eyebrow">Privacy and data</p>
         <h1>What we keep.<br /><em>Who can see it.</em></h1>
-        <p>A plain-language summary of what Retrace stores, where it lives and who can read it. It describes how this version of the app works; it is not a legal agreement.</p>
+        <p>A plain-language summary of what Retrace stores, where it lives and who can read it. It explains how the app works today. It isn&rsquo;t a legal agreement.</p>
       </div>
       <div className="privacy-grid">
         {sections.map(s => (
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
         ))}
       </div>
       <section className="privacy-note">
-        <h2>Advice, not a diagnosis</h2>
+        <h2>A suggestion for a technician to confirm</h2>
         <p>Retrace ranks the next check from recorded symptoms and outcomes. It does not inspect your laptop. A qualified technician should assess the hardware before any repair, and Retrace is not responsible for repair decisions made from its suggestions.</p>
       </section>
       <div className="privacy-links">

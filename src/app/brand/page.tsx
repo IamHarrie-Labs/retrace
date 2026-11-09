@@ -28,8 +28,8 @@ export default function BrandPage() {
     <div className="brand-page">
       <div className="page-heading">
         <p className="eyebrow">Brand assets</p>
-        <h1>One mark.<br /><em>One voice.</em></h1>
-        <p>The wordmark, colours and type that every Retrace page uses. Download the vectors, copy the values, and credit the photographers below if you reuse their images.</p>
+        <h1>Logo, colours<br /><em>and type.</em></h1>
+        <p>Everything Retrace pages are built from. Download the logo, copy the colour values, and if you reuse a photo, credit the photographer listed below.</p>
       </div>
 
       <div className="brand-board"><Brand /></div>

@@ -14,7 +14,7 @@ const glyphic = Faculty_Glyphic({ subsets: ["latin"], weight: "400", variable: "
 
 export const metadata: Metadata = {
   title: { default: "Retrace · A little history. A longer life.", template: "%s · Retrace" },
-  description: "Know what's been tried before you try it again. Device repair history on Walrus Memory, ownership on Sui via Tatum.",
+  description: "Know what's been tried before you try it again. Retrace keeps a laptop's repair history with the laptop and passes it to the next owner.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

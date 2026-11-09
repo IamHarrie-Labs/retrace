@@ -13,7 +13,7 @@ import { requestJson } from "@/lib/client-api";
 const statusCopy: Record<PublicSummary["status"], { tone: "good" | "warn" | "muted" | "accent"; label: string; text: string }> = {
   resolved: { tone: "good", label: "Faults resolved", text: "Every recorded fault has a repair marked as resolved." },
   open: { tone: "warn", label: "Open fault", text: "At least one recorded fault has no resolved repair yet. Ask the seller about it." },
-  clean: { tone: "accent", label: "No faults recorded", text: "History exists, but no fault needed a repair." },
+  clean: { tone: "accent", label: "No faults recorded", text: "There are records, and none of them needed a repair." },
   "no-history": { tone: "muted", label: "No history yet", text: "This passport has no repair records yet." },
 };
 
@@ -102,12 +102,12 @@ export function ShareCard({ id, make, model }: { id: string; make: string; model
       <div className="flex gap-4">
         {origin && <Qr value={publicUrl} label="QR code linking to this passport's public summary" />}
         <div className="space-y-2 text-xs leading-5 text-muted">
-          <p>Stick this QR code under the laptop. Anyone who scans it sees the public summary: owners, repairs, and whether any fault is still open.</p>
+          <p>Stick this under the laptop. Scanning it shows how many owners and repairs it has had, and whether any problem is still open.</p>
           <Button variant="ghost" onClick={printSticker}>Print sticker</Button>
         </div>
       </div>
       <div className="mt-4 border-t border-line pt-4">
-        <p className="mb-2 text-xs leading-5 text-muted">Selling? Give a prospective buyer the full history and diagnosis, read-only, for 7 days. The link stops working if the passport changes hands.</p>
+        <p className="mb-2 text-xs leading-5 text-muted">Selling it? Send a buyer a link to the full history. They can read it for 7 days, and the link stops working once the laptop changes hands.</p>
         <Button onClick={create} disabled={busy} className="w-full">{busy ? "Creating…" : link ? "Create a new link" : "Create read-only link"}</Button>
         {link && <p className="mt-2 break-all font-mono text-[11px]">{link.url}</p>}
         {link && <p className="text-[11px] text-muted">Expires {new Date(link.expiresAt).toLocaleDateString()}.</p>}

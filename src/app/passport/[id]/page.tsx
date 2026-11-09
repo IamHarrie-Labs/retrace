@@ -88,7 +88,7 @@ function PassportContent({ id }: { id: string }) {
         <Card>
           <p className="text-sm">
             {data.wasOwner
-              ? "You no longer hold this passport, so Retrace no longer shows you this device's repair memory. The current owner has it."
+              ? "You've handed this laptop on, so its full history is now with the new owner."
               : readShare()
                 ? "This read-only link has expired, or the device has changed hands since it was created. Ask the holder for a new link."
                 : !data.viewer || !s.address
@@ -128,7 +128,7 @@ function PassportContent({ id }: { id: string }) {
       )}
 
       <Card>
-        <Label>Transfers recorded by Retrace (Sui events via Tatum)</Label>
+        <Label>Ownership changes on Sui, read through Tatum</Label>
         <ul className="space-y-2 text-sm">
           {data.events.map((e) => (
             <li key={e.txDigest + e.kind} className="flex flex-wrap gap-x-2 text-muted">
@@ -193,7 +193,7 @@ function DiagnosisView({ d, title }: { d: Diagnosis; title: string }) {
     <div className={`rounded-lg border p-4 ${d.memory ? "border-accent/40 bg-accent/5" : "border-line bg-bg"}`}>
       <div className="mb-2 flex items-center justify-between">
         <span className="text-sm font-semibold">{title}</span>
-        {d.memory ? <Pill tone="accent">Walrus Memory</Pill> : <Pill>priors only</Pill>}
+        {d.memory ? <Pill tone="accent">Walrus Memory</Pill> : <Pill>symptom only</Pill>}
       </div>
       <p className="text-sm">{d.headline}</p>
       <div className={`mt-3 rounded-md p-3 text-sm ${changed ? "bg-accent/10 text-ink" : "bg-raised text-ink"}`}>
@@ -203,7 +203,7 @@ function DiagnosisView({ d, title }: { d: Diagnosis; title: string }) {
       {d.avoid.map((a) => (
         <p key={a.hypothesis.key} className="mt-2 text-xs text-warn">⚠ {a.text}</p>
       ))}
-      <p className="mt-4 text-[11px] text-muted">Relative diagnostic weights, not measured probabilities. A technician should assess the device.</p>
+      <p className="mt-4 text-[11px] text-muted">The bars show how strongly Retrace leans toward each cause. They are estimates, so a technician should still check the laptop.</p>
       <ul className="mt-3 space-y-2">
         {d.ranked.map((h) => (
           <li key={h.key}>
@@ -257,7 +257,7 @@ function Timeline({ records, attestations, passportId }: { records: RepairRecord
       <div className="mb-3 flex items-center justify-between">
         <Label>Repair memory · {records.length} entries on Walrus</Label>
       </div>
-      <p className="mb-5 text-[11px] leading-5 text-muted">Roles and evidence are declared by the holder unless a record shows a shop&apos;s signed verification.</p>
+      <p className="mb-5 text-[11px] leading-5 text-muted">The owner fills in who did each repair and how they know. Records signed by a repair shop say so.</p>
       {!records.length && <p className="text-sm text-muted">Nothing recorded yet. Start with the symptom.</p>}
       <ol className="relative space-y-4 border-l border-line pl-5">
         {records
@@ -337,32 +337,32 @@ function AddRecord({ id, records, onSaved, initialFollowup }: { id: string; reco
       const saved = await requestJson<{record: RepairRecord; lesson?: unknown; warning?: string}>(`/api/passport/${id}/records`, {
         method: "POST", headers: { "content-type": "application/json", "idempotency-key": requestKey.current.key }, body: payload,
       }, 180_000);
-      setMsg(saved.warning || `Saved to Walrus. Receipt: ${saved.record.blobId || "confirmed"}.${saved.lesson ? " A model-level lesson was also shared." : ""}`);
+      setMsg(saved.warning || `Saved to Walrus. Receipt: ${saved.record.blobId || "confirmed"}.${saved.lesson ? " A tip for this model was also shared." : ""}`);
       requestKey.current = null; setAction(""); setDays(""); setCost(""); onSaved();
     } catch(error) { setMsg(error instanceof Error ? error.message : "Save failed. Retry with the same details."); }
     finally { setBusy(false); }
   }
 
   return <div id="add-record" className="scroll-mt-24"><Card>
-    <Label>Add to this device’s memory</Label>
+    <Label>Add to this laptop’s history</Label>
     <form onSubmit={event=>{event.preventDefault();void save();}}>
       <fieldset disabled={busy} className="record-fields">
         <legend className="sr-only">Repair record details</legend>
         <div className="field"><label htmlFor="record-kind">What are you recording?</label><select id="record-kind" className={inputCls} value={kind} onChange={event=>{const next=event.target.value as Kind;setKind(next);setOutcome(outcomes[next][0]);setRef("");}}><option value="symptom">A symptom</option><option value="test">A diagnostic test</option><option value="repair">A repair</option><option value="followup">A repair follow-up</option></select></div>
         <div className="field"><label htmlFor="record-family">Fault category</label><select id="record-family" className={inputCls} value={family} onChange={event=>{const next=event.target.value as Family;setFamily(next);setHypothesis(FAMILIES[next].hypotheses[0].key);setRef("");}}>{Object.entries(FAMILIES).map(([key,value])=><option key={key} value={key}>{value.label}</option>)}</select></div>
-        {(kind==="test"||kind==="repair")&&<div className="field field-wide"><label htmlFor="record-cause">Possible cause being checked or repaired</label><select id="record-cause" className={inputCls} value={hypothesis} onChange={event=>setHypothesis(event.target.value)}>{FAMILIES[family].hypotheses.map(cause=><option key={cause.key} value={cause.key}>{cause.label}</option>)}</select></div>}
+        {(kind==="test"||kind==="repair")&&<div className="field field-wide"><label htmlFor="record-cause">What do you think the cause is?</label><select id="record-cause" className={inputCls} value={hypothesis} onChange={event=>setHypothesis(event.target.value)}>{FAMILIES[family].hypotheses.map(cause=><option key={cause.key} value={cause.key}>{cause.label}</option>)}</select></div>}
         {kind==="followup"&&<div className="field field-wide"><label htmlFor="record-reference">Which repair is this about?</label><select id="record-reference" className={inputCls} value={ref} onChange={event=>setRef(event.target.value)} required><option value="">{repairs.length?"Choose a repair":"No repairs in this category yet"}</option>{repairs.map(repair=><option key={repair.id} value={repair.id}>{new Date(repair.createdAt).toLocaleDateString()} · {repair.action.slice(0,65)}</option>)}</select>{!repairs.length&&<p className="field-hint">Choose the repair’s fault category, or record the repair first.</p>}</div>}
         <div className="field field-wide"><label htmlFor="record-description">{kind==="symptom"?"What happens?":"What was done or observed?"}</label><textarea id="record-description" className={inputCls} rows={3} value={action} onChange={event=>setAction(event.target.value)} minLength={3} maxLength={400} required placeholder={kind==="symptom"?"For example, charging stops when the cable moves.":"Describe the test, repair or follow-up in plain words."}/><p className="field-hint">{action.length}/400 characters. Keep passwords and personal details out of service notes.</p></div>
         {kind!=="symptom"&&<div className="field"><label htmlFor="record-outcome">Outcome</label><select id="record-outcome" className={inputCls} value={outcome} onChange={event=>setOutcome(event.target.value as Outcome)}>{outcomes[kind].map(value=><option key={value} value={value}>{({resolved:"Fault resolved",returned:"Fault returned",confirmed:"Cause confirmed",ruled_out:"Cause ruled out",pending:"Not known yet"})[value]}</option>)}</select></div>}
         {outcome==="returned"&&kind!=="symptom"&&<div className="field"><label htmlFor="record-return-days">Returned after how many days?</label><input id="record-return-days" className={inputCls} type="number" inputMode="numeric" min={0} max={3650} step={1} value={days} onChange={event=>setDays(event.target.value)} placeholder="Optional"/></div>}
         {kind==="repair"&&<div className="field"><label htmlFor="record-cost">Repair cost (USD)</label><input id="record-cost" className={inputCls} type="number" inputMode="decimal" min={0} max={100000} step="0.01" value={cost} onChange={event=>setCost(event.target.value)} placeholder="Optional"/></div>}
-        <div className="field"><label htmlFor="record-role">Source role (declared)</label><select id="record-role" className={inputCls} value={role} onChange={event=>setRole(event.target.value as Role)}><option value="owner">Owner</option><option value="technician">Technician</option></select></div>
-        <div className="field"><label htmlFor="record-evidence">Supporting evidence</label><select id="record-evidence" className={inputCls} value={evidence} onChange={event=>setEvidence(event.target.value as Evidence)}><option value="reported">Reported or remembered</option><option value="tested">Tested or measured</option><option value="receipt">Payment receipt</option></select></div>
+        <div className="field"><label htmlFor="record-role">Who did this?</label><select id="record-role" className={inputCls} value={role} onChange={event=>setRole(event.target.value as Role)}><option value="owner">Owner</option><option value="technician">Technician</option></select></div>
+        <div className="field"><label htmlFor="record-evidence">How do you know?</label><select id="record-evidence" className={inputCls} value={evidence} onChange={event=>setEvidence(event.target.value as Evidence)}><option value="reported">I remember it, or was told</option><option value="tested">Tested or measured</option><option value="receipt">I have a receipt</option></select></div>
         <div className="field field-wide"><label htmlFor="record-shop">Shop or technician name</label><input id="record-shop" className={inputCls} value={by} onChange={event=>setBy(event.target.value)} maxLength={80} placeholder="Optional" autoComplete="organization"/></div>
-        <label className="consent-field field-wide"><input type="checkbox" checked={shareLesson} onChange={event=>setShareLesson(event.target.checked)}/><span>Share a model-level lesson if this repair is resolved. Device notes are excluded.</span></label>
+        <label className="consent-field field-wide"><input type="checkbox" checked={shareLesson} onChange={event=>setShareLesson(event.target.checked)}/><span>If this fixed it, share a tip with other owners of this model. Your notes, costs and wallet stay private.</span></label>
       </fieldset>
       <Button type="submit" disabled={busy||action.trim().length<3||(kind==="followup"&&!ref)} className="mt-5 w-full">{busy?"Waiting for the storage receipt…":"Save repair record"}</Button>
-      <p className="mt-3 text-[11px] leading-5 text-muted">Role and evidence are entered by the passport holder, not independently verified. A payment receipt does not prove that a repair worked.</p>
+      <p className="mt-3 text-[11px] leading-5 text-muted">Only a repair shop&apos;s signature checks these answers. A receipt shows the work was paid for. It can&apos;t show that the repair worked.</p>
       {msg&&<p className="save-status" role="status" aria-live="polite">{msg}</p>}
     </form>
   </Card></div>;

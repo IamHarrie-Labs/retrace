@@ -11,7 +11,7 @@ import { Button, short } from "./ui";
 
 const links = [
   { href: "/#how", label: "How it works" },
-  { href: "/demo", label: "Try the story" },
+  { href: "/demo", label: "See an example" },
   { href: "/devices", label: "My devices" },
   { href: "/proof", label: "Proof" },
 ];
