@@ -61,7 +61,7 @@ export function FolderFaq() {
     <section className="ff2" id="faq" aria-label="Questions and answers">
       <div className="ff2-fold">
         <div className="ff2-shape" ref={shape} aria-hidden="true">
-          <div className="ff2-sil" ref={sil}><Image src="/images/photos/macbook-latte.jpg" alt="" fill style={{ objectPosition: "12% center" }} sizes="(max-width:900px) 90vw, 440px" /></div>
+          <div className="ff2-sil" ref={sil}><Image src="/images/photos/macbook-air-desk.jpg" alt="" fill style={{ objectPosition: "center 40%" }} sizes="(max-width:900px) 90vw, 440px" /></div>
         </div>
         <div className="ff2-front">
           <h2>Got questions<span className="qm">?</span></h2>

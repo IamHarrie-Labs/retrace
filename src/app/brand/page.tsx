@@ -20,7 +20,7 @@ const photos = [
   { file: "Silver MacBook", by: "Maxim Hopman", lic: "Unsplash License", href: "https://unsplash.com/photos/Hin-rzhOdWs" },
   { file: "MacBook Air on a wooden table", by: "Yudhajit Ghosh", lic: "Unsplash License", href: "https://unsplash.com/photos/WGFQscKlxgQ" },
   { file: "Technician repairing a MacBook", by: "Revendo", lic: "Unsplash License", href: "https://unsplash.com/photos/M7_rJ4LF-jk" },
-  { file: "MacBook and a latte on a wooden table", by: "Nolan Issac", lic: "Unsplash License", href: "https://unsplash.com/photos/It0DCaCBr40" },
+  { file: "MacBook Air on a wooden desk", by: "Howard Bouchevereau", lic: "Unsplash License", href: "https://unsplash.com/photos/RSCirJ70NDM" },
   { file: "MacBook Pro next to a plant", by: "James McKinven", lic: "Unsplash License", href: "https://unsplash.com/photos/tpuAo8gVs58" },
 ];
 
