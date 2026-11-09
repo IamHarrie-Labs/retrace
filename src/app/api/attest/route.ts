@@ -4,7 +4,7 @@ import { errorResponse,HttpError,loadPassport } from "@/lib/access";
 import { attestationMessage } from "@/lib/attest";
 import { limitRequests,readJson,requireSameOrigin } from "@/lib/http";
 import { ledger } from "@/lib/ledger";
-import { readRecords,writeAttestation } from "@/lib/memory";
+import { readAttestations,readRecords,writeAttestation } from "@/lib/memory";
 import { readToken } from "@/lib/tokens";
 import { suiClientIfConfigured } from "@/lib/sui-client";
 import { z } from "zod";
@@ -18,7 +18,7 @@ async function open(token:string){
 /** The shop sees exactly one record (nothing else from the device history). */
 export async function GET(req:Request){
   try{const {passport,record}=await open(new URL(req.url).searchParams.get("token")??"");
-    const existing=ledger().attestations(passport.id).find(a=>a.recordId===record.id);
+    const existing=(await readAttestations(passport,await readRecords(passport.id))).find(a=>a.recordId===record.id);
     const {author:_a,...shown}=record;
     return Response.json({device:`${passport.make} ${passport.model}`,passportId:passport.id,record:shown,attested:existing?{shop:existing.shop,signer:existing.signer,signedAt:existing.signedAt}:null},{headers:{"Cache-Control":"no-store"}});
   }catch(e){return errorResponse(e);}

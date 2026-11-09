@@ -40,7 +40,7 @@ A laptop's own tested history always outweighs what strangers report.
 - `retrace-lessons-<family>` for shared lessons;
 - `retrace-attest-<id>` for repair shops' signatures.
 
-As of writing there are 22 memory writes on Mainnet across 4 devices. The `/proof` page lists them live. A "Verify against Walrus" button checks the app's local index against what Walrus actually holds, and if the index is lost it is rebuilt from Walrus.
+As of writing there are 22 memory writes on Mainnet. They cover 2 laptops on the current contract, plus 2 from my first test deployment that `/proof` still lists but doesn't count. The `/proof` page lists them live. A "Verify against Walrus" button checks the app's local index against what Walrus actually holds. If the index is lost, the records and shop signatures are rebuilt from Walrus, and each signature is checked again before it counts.
 
 **Tatum** is how Retrace reads Sui. Every ownership question goes through Tatum's Sui GraphQL endpoint:
 

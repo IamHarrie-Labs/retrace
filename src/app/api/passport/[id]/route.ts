@@ -1,7 +1,6 @@
 import { sessionAddress } from "@/lib/auth";
 import { errorResponse,loadPassport,validShare } from "@/lib/access";
-import { readRecords } from "@/lib/memory";
-import { ledger } from "@/lib/ledger";
+import { readAttestations,readRecords } from "@/lib/memory";
 import { followupsDue,publicSummary } from "@/lib/summary";
 import { getPassport,getPassportEvents } from "@/lib/tatum";
 export async function GET(req:Request,ctx:{params:Promise<{id:string}>}){
@@ -12,7 +11,7 @@ export async function GET(req:Request,ctx:{params:Promise<{id:string}>}){
     if(authorized){const current=await getPassport(passport.id,{fresh:true});if(!current||current.ownerKind!=="address"||current.owner!==address){authorized=false;if(current)passport=current;}}
     const shared=!authorized&&validShare(share,passport);
     // Every visitor gets the public pre-purchase summary (counts and status, no notes).
-    const all=await readRecords(passport.id);const attestations=ledger().attestations(passport.id);
+    const all=await readRecords(passport.id);const attestations=await readAttestations(passport,all);
     const summary=publicSummary(all,events.filter(e=>e.kind==="transferred").length,new Set(attestations.map(a=>a.recordId)));
     const full=authorized||shared;
     return Response.json({passport,events,viewer:address,authorized,shared,wasOwner:!!address&&!authorized&&events.some(event=>event.to===address),

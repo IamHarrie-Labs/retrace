@@ -3,7 +3,7 @@ import { errorResponse,HttpError,loadPassport } from "@/lib/access";
 import { limitRequests,readJson,requireSameOrigin } from "@/lib/http";
 import { ledger } from "@/lib/ledger";
 import { readToken,tokenId } from "@/lib/tokens";
-import { readRecords } from "@/lib/memory";
+import { readAttestations,readRecords } from "@/lib/memory";
 import { publicSummary } from "@/lib/summary";
 import { getPassportEvents } from "@/lib/tatum";
 import { z } from "zod";
@@ -20,7 +20,7 @@ export async function GET(req:Request){
   try{const token=new URL(req.url).searchParams.get("token")??"";const {h,passport}=await open(token);
     const events=await getPassportEvents(passport.id);const records=await readRecords(passport.id);
     return Response.json({passport:{id:passport.id,make:passport.make,model:passport.model,owner:passport.owner},
-      summary:publicSummary(records,events.filter(e=>e.kind==="transferred").length,new Set(ledger().attestations(passport.id).map(a=>a.recordId))),
+      summary:publicSummary(records,events.filter(e=>e.kind==="transferred").length,new Set((await readAttestations(passport,records)).map(a=>a.recordId))),
       claimedBy:h.buyer,viewer:await sessionAddress()},{headers:{"Cache-Control":"no-store"}});
   }catch(e){return errorResponse(e);}
 }

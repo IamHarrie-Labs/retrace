@@ -6,6 +6,7 @@ import { decode,encodeLesson,encodeRecord,type Family,type Lesson,type RepairRec
 import { ledger,type Attestation } from "./ledger";
 import { modelKey } from "./models";
 import { HttpError } from "./http";
+import { getPassport } from "./tatum";
 
 let client:MemWal|null=null;
 function memwal(){return client??=MemWal.create({key:config.memwalKey(),accountId:config.memwalAccountId(),serverUrl:config.memwalServerUrl,requestTimeoutMs:30_000,preflightTimeoutMs:8_000});}
@@ -109,5 +110,45 @@ export async function memoryStats(){
     if(!page.has_more)break;if(!page.next_cursor||page.next_cursor===cursor)throw new HttpError(503,"Memory inventory pagination did not advance.");cursor=page.next_cursor;
   }
   const health=await m.health();
-  return {accountId:config.memwalAccountId(),relayer:config.memwalServerUrl,relayerStatus:health.status,total:namespaces.reduce((sum,ns)=>sum+ns.memory_count,0),devices:namespaces.filter(ns=>ns.name.startsWith("retrace-device-")).length,namespaces};
+  // Device spaces whose passport isn't on the current contract (the first test deployment) stay listed but don't count as laptops.
+  const devicePrefix="retrace-device-",idOf=(name:string)=>name.replace(/^retrace-(device|attest)-/,"");
+  const deviceIds=namespaces.filter(ns=>ns.name.startsWith(devicePrefix)).map(ns=>idOf(ns.name));
+  const current=new Map(await Promise.all(deviceIds.map(async id=>[id,await getPassport(id).then(p=>!!p,()=>true)] as const)));
+  const listed=namespaces.map(ns=>({...ns,retired:/^retrace-(device|attest)-/.test(ns.name)&&current.get(idOf(ns.name))===false}));
+  return {accountId:config.memwalAccountId(),relayer:config.memwalServerUrl,relayerStatus:health.status,total:listed.reduce((sum,ns)=>sum+ns.memory_count,0),
+    devices:deviceIds.filter(id=>current.get(id)).length,retiredDevices:deviceIds.filter(id=>!current.get(id)).length,namespaces:listed};
+}
+
+const attestChecked=new Set<string>();
+/**
+ * Attestations for a passport. If the local index has none (a fresh server, a lost volume),
+ * rebuild them once from the device's attestation namespace on Walrus. Each one is re-checked
+ * before it counts: the message must match the record as stored now, the signer must not be
+ * the record's author, and the wallet signature must verify.
+ */
+export async function readAttestations(passport:{id:string;make:string;model:string},records:RepairRecord[]):Promise<Attestation[]>{
+  const db=ledger();const indexed=db.attestations(passport.id);
+  if(indexed.length||attestChecked.has(passport.id))return indexed;
+  try{
+    const ns=attestationsNamespace(passport.id);
+    const page=await memwal().listMemories({namespace:ns,limit:100});
+    if(page.memories.length){
+      const recalled=await memwal().recall({query:"shop attestation signed record",namespace:ns,limit:100});
+      const { verifyPersonalMessageSignature }=await import("@mysten/sui/verify");
+      const { suiClientIfConfigured }=await import("./sui-client");
+      const { attestationMessage }=await import("./attest");
+      const byId=new Map(records.map(r=>[r.id,r]));
+      for(const hit of recalled.results){
+        const a=decode<Attestation&{v:number;kind:string}>(hit.text);
+        if(!a||a.kind!=="attestation"||a.passportId!==passport.id)continue;
+        const record=byId.get(a.recordId);
+        if(!record||a.signer===record.author)continue;
+        if(a.message!==attestationMessage(`${passport.make} ${passport.model}`,passport.id,record,a.shop))continue;
+        try{await verifyPersonalMessageSignature(new TextEncoder().encode(a.message),a.signature,{address:a.signer,client:suiClientIfConfigured()});}catch{continue;}
+        db.saveAttestation({recordId:a.recordId,passportId:a.passportId,signer:a.signer,shop:a.shop,message:a.message,signature:a.signature,signedAt:a.signedAt,blobId:hit.blob_id});
+      }
+    }
+    attestChecked.add(passport.id);
+  }catch{ /* Walrus unreachable: show what the index has and try again on the next request. */ }
+  return db.attestations(passport.id);
 }
