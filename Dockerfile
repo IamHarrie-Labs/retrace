@@ -24,7 +24,8 @@ RUN groupadd --system --gid 1001 retrace && useradd --system --uid 1001 --gid re
 COPY --from=builder --chown=retrace:retrace /app/.next/standalone ./
 COPY --from=builder --chown=retrace:retrace /app/.next/static ./.next/static
 COPY --from=builder --chown=retrace:retrace /app/public ./public
-COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 EXPOSE 3000
 # Starts as root only to fix the data volume's owner, then runs as the retrace user.
 ENTRYPOINT ["docker-entrypoint.sh"]

@@ -6,9 +6,9 @@ Retrace is repair memory that stays with a device. Owners and technicians record
 
 Built for **Total Recall — Tatum × Walrus Memory Hackathon** (Smart Agents for Real Life track).
 
-- **Live app:** _add the deployed URL here_
-- **Proof on Mainnet:** `/proof` on the live app shows every Walrus Memory write, its namespace and the Sui checkpoint read through Tatum.
-- **Try it without a wallet:** `/demo` walks through the ThinkPad T480 story with memory on and off.
+- **Live app:** https://retrace.38.49.210.22.sslip.io
+- **Proof on Mainnet:** [https://retrace.38.49.210.22.sslip.io/proof](https://retrace.38.49.210.22.sslip.io/proof) shows every Walrus Memory write, its namespace and the Sui checkpoint read through Tatum.
+- **Try it without a wallet:** [https://retrace.38.49.210.22.sslip.io/demo](https://retrace.38.49.210.22.sslip.io/demo) walks through the ThinkPad T480 story with memory on and off.
 - **Sample passport:** [`0xcf67d39d…bcb3`](https://suiscan.xyz/mainnet/object/0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3) (Lenovo ThinkPad T480, 4 records, 1 shop-verified)
 - **Write-up:** [docs/blog-post.md](docs/blog-post.md) · **Video script:** [docs/demo-script.md](docs/demo-script.md)
 
@@ -101,6 +101,14 @@ fly volumes create retrace_data --size 1
 fly secrets set TATUM_API_KEY=... MEMWAL_ACCOUNT_ID=... MEMWAL_PRIVATE_KEY=... SESSION_SECRET=... SERIAL_PEPPER=...
 fly deploy
 ```
+
+**Plain Docker behind Caddy** (how the live app runs): build the image anywhere, copy it with `docker save retrace | ssh host docker load`, then on the server
+
+```bash
+docker run -d --name retrace --restart unless-stopped -p 127.0.0.1:3011:3000   --env-file /opt/retrace/.env -v retrace-data:/app/.data retrace
+```
+
+with a Caddy site `retrace.example.com { reverse_proxy 127.0.0.1:3011 }` for HTTPS. Strip Windows line endings from the env file first (`tr -d ''`); Docker keeps them as part of each value.
 
 **Docker Compose** (any VPS): add `APP_ORIGIN` to `.env.local`, then `docker compose up -d --build` reads `.env.local` and keeps the index in the `retrace-data` volume.
 
