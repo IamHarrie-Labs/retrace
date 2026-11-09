@@ -14,13 +14,14 @@ const palette = [
 ];
 
 const photos = [
-  { file: "ThinkPad on a desk", by: "l ch", lic: "Unsplash License", href: "https://unsplash.com/photos/AuMob2xihZk" },
-  { file: "ThinkPad on a wooden table", by: "Eddie Sennov", lic: "Unsplash License", href: "https://unsplash.com/photos/Tiy7aJwWPvc" },
-  { file: "ThinkPad keyboard and TrackPoint", by: "Ke Wn", lic: "Unsplash License", href: "https://unsplash.com/photos/dYrx9CELZ_A" },
-  { file: "Inside a ThinkPad T470p", by: "Kenming Wang", lic: "CC BY-SA 2.0", href: "https://commons.wikimedia.org/wiki/File:Thinkpad_T470p_(35786843930).jpg" },
-  { file: "ThinkPad X220 motherboard in its case", by: "Siarhei Besarab", lic: "CC BY-SA 4.0", href: "https://commons.wikimedia.org/wiki/File:Fully_equipped_Lenovo_ThinkPad_X220_motherboard_with_keyboard_bezel.jpg" },
-  { file: "ThinkPad X220 fan and heatsink", by: "Siarhei Besarab", lic: "CC BY-SA 4.0", href: "https://commons.wikimedia.org/wiki/File:ThinkPad_X220_CPU_cooling_system_(fan_and_heatsink_assembly).jpg" },
-  { file: "Lenovo ThinkPad T470", by: "NickW1129", lic: "CC0", href: "https://commons.wikimedia.org/wiki/File:Lenovo_ThinkPad_T470.jpg" },
+  { file: "MacBook Pro on a wooden desk", by: "Kari Shea", lic: "Unsplash License", href: "https://unsplash.com/photos/1SAnrIxw5OY" },
+  { file: "Technician inside a MacBook Pro", by: "Revendo", lic: "Unsplash License", href: "https://unsplash.com/photos/7x0dGJqbfgk" },
+  { file: "MacBook Pro logic board", by: "Nikolai Chernichenko", lic: "Unsplash License", href: "https://unsplash.com/photos/VVqk1YRrEmE" },
+  { file: "Silver MacBook", by: "Maxim Hopman", lic: "Unsplash License", href: "https://unsplash.com/photos/Hin-rzhOdWs" },
+  { file: "MacBook Air on a wooden table", by: "Yudhajit Ghosh", lic: "Unsplash License", href: "https://unsplash.com/photos/WGFQscKlxgQ" },
+  { file: "Technician repairing a MacBook", by: "Revendo", lic: "Unsplash License", href: "https://unsplash.com/photos/M7_rJ4LF-jk" },
+  { file: "MacBook keyboard", by: "Kamil Switalski", lic: "Unsplash License", href: "https://unsplash.com/photos/p3aS1QBhm7g" },
+  { file: "MacBook Pro next to a plant", by: "James McKinven", lic: "Unsplash License", href: "https://unsplash.com/photos/tpuAo8gVs58" },
 ];
 
 export default function BrandPage() {
@@ -54,7 +55,7 @@ export default function BrandPage() {
       <ul className="brand-credits">
         {photos.map(p => <li key={p.href}><span>{p.file}</span><span>{p.by}</span><a href={p.href} target="_blank" rel="noreferrer">{p.lic} <ArrowUpRight size={14} /></a></li>)}
       </ul>
-      <p className="brand-type-note">Every photo shows a real Lenovo ThinkPad. The sample story follows a ThinkPad T480; photos of sibling models are labelled with their model. Images are resized only.</p>
+      <p className="brand-type-note">Every photo shows a real Apple MacBook. The example story follows a MacBook Pro 13; Retrace works the same way for any laptop on the list. Images are resized only.</p>
       <Link href="/" className="text-link mt-6">Back to the homepage <ArrowUpRight size={17} /></Link>
     </div>
   );

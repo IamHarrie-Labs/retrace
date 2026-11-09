@@ -9,9 +9,9 @@ import { Brand } from "../brand";
 type Chapter = { name: string; record: string; verb: string; note: string; next: string; img?: string; alt?: string };
 
 const chapters: Chapter[] = [
-  { name: "The symptom", record: "Symptom", verb: "Know", note: "Charging stops when the cable moves.", next: "Log the symptom", img: "/images/photos/thinkpad-on-desk.jpg", alt: "A Lenovo ThinkPad open on a desk" },
-  { name: "The repair", record: "Repair", verb: "Keep", note: "Battery replaced. The fault came back after 21 days.", next: "Record the outcome", img: "/images/photos/thinkpad-inside.jpg", alt: "Inside a ThinkPad T470p with the bottom cover removed" },
-  { name: "The lesson", record: "Lesson", verb: "Learn", note: "A new battery and a known-good charger didn’t fix it. Check the DC jack.", next: "Inspect the DC jack", img: "/images/photos/thinkpad-board.jpg", alt: "A ThinkPad X220 motherboard inside its case" },
+  { name: "The symptom", record: "Symptom", verb: "Know", note: "Charging stops when the cable moves.", next: "Log the symptom", img: "/images/photos/macbook-desk.jpg", alt: "A MacBook Pro open on a wooden desk" },
+  { name: "The repair", record: "Repair", verb: "Keep", note: "Battery replaced. The fault came back after 21 days.", next: "Record the outcome", img: "/images/photos/macbook-battery-repair.jpg", alt: "A technician working inside an open MacBook Pro, next to its battery" },
+  { name: "The lesson", record: "Lesson", verb: "Learn", note: "A new battery and a charger that works didn’t fix it. Check the USB-C port.", next: "Inspect the USB-C port", img: "/images/photos/macbook-logic-board.jpg", alt: "The logic board and fan inside a MacBook Pro" },
   { name: "The handover", record: "Handover", verb: "Pass", note: "The buyer gets the passport with every repair already in it.", next: "Send a claim link" },
 ];
 
@@ -161,7 +161,7 @@ export function CubeHero() {
               <figure key={c.name} className="ch-face" ref={el => { faces.current[i] = el; }} style={{ transform: `rotateY(${i * 90}deg) translateZ(calc(var(--cube) / 2))`, margin: 0 }}>
                 <div className="ch-pic">
                   {c.img ? <Image src={c.img} alt={c.alt ?? ""} fill sizes="(max-width:900px) 56vw, 26vw" priority={i === 0} draggable={false} /> : (
-                    <div className="ch-pass"><Brand /><div className="chip" /><dl><div><dt>Device</dt><dd>ThinkPad T480</dd></div><div><dt>Records</dt><dd>4 on Walrus</dd></div><div><dt>Owner</dt><dd>A → B</dd></div></dl></div>
+                    <div className="ch-pass"><Brand /><div className="chip" /><dl><div><dt>Device</dt><dd>MacBook Pro 13</dd></div><div><dt>Records</dt><dd>4 on Walrus</dd></div><div><dt>Owner</dt><dd>A → B</dd></div></dl></div>
                   )}
                 </div>
                 <figcaption><span>{c.name}</span><span>{num(i)}/04</span></figcaption>
@@ -177,7 +177,7 @@ export function CubeHero() {
 
         <div className={`ch-meta${swapping ? " sw" : ""}`} aria-live="polite">
           <p className="m1">{ch.note}</p>
-          <p className="m2">ThinkPad T480 · chapter {num(shown)} of 04</p>
+          <p className="m2">MacBook Pro 13 · chapter {num(shown)} of 04</p>
         </div>
 
         <div className="ch-dots" role="group" aria-label="Story chapters" onPointerDown={e => e.stopPropagation()}>

@@ -29,7 +29,7 @@ const sections: { tag: string; title: string; who: string; body: string[] }[] = 
     title: "Shared lessons",
     who: "Used to improve advice for everyone",
     body: [
-      "When you save a resolved repair you can choose to share a tip for that model, such as which fix worked for a symptom on a ThinkPad T480. Device notes, costs and wallet details are left out.",
+      "When you save a resolved repair you can choose to share a tip for that model, such as which fix worked for a symptom on a MacBook Pro 13. Device notes, costs and wallet details are left out.",
       "Leave the box unticked and nothing from your record is shared.",
     ],
   },

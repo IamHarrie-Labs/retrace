@@ -3,8 +3,8 @@
 // with the same canonical model, so "Thinkpad t-480" and "ThinkPad T480" are one model.
 
 export const LAPTOP_MODELS: Record<string, string[]> = {
-  Lenovo: ["ThinkPad T480", "ThinkPad T490", "ThinkPad T14 Gen 2", "ThinkPad X1 Carbon Gen 9", "ThinkPad X1 Carbon Gen 11", "ThinkPad E14 Gen 4", "IdeaPad 5 14", "Legion 5"],
   Apple: ["MacBook Air M1 (2020)", "MacBook Air M2 (2022)", "MacBook Pro 13 (2020)", "MacBook Pro 14 (2021)", "MacBook Pro 16 (2019)"],
+  Lenovo: ["ThinkPad T480", "ThinkPad T490", "ThinkPad T14 Gen 2", "ThinkPad X1 Carbon Gen 9", "ThinkPad X1 Carbon Gen 11", "ThinkPad E14 Gen 4", "IdeaPad 5 14", "Legion 5"],
   Dell: ["Latitude 5490", "Latitude 7420", "XPS 13 9310", "XPS 15 9500", "Inspiron 15 3511"],
   HP: ["EliteBook 840 G5", "EliteBook 840 G8", "ProBook 450 G8", "Pavilion 15", "Spectre x360 14"],
   ASUS: ["ZenBook 14 UX425", "VivoBook 15 X515", "ROG Zephyrus G14"],

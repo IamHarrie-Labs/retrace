@@ -2,7 +2,7 @@
 
 _Built for Total Recall, the Tatum × Walrus Memory hackathon._
 
-Picture a ThinkPad T480 that only charges when the cable sits at a certain angle. The first shop swaps the battery. Three weeks later the fault is back. The second shop has no idea what the first one did, so it swaps the battery again.
+Picture a MacBook Pro that only charges when the USB-C cable sits at a certain angle. The first shop swaps the battery. Three weeks later the fault is back. The second shop has no idea what the first one did, so it swaps the battery again.
 
 Nothing about that is unusual. Repair history lives in receipts, in a shop's own ticketing system, or in the memory of whoever owned the laptop last. When the laptop changes hands, or just changes shops, the history doesn't travel with it, so the next person starts from zero and tries the obvious fix again.
 
@@ -20,9 +20,9 @@ The page shows both answers side by side, without memory and with memory. It als
 
 ## Lessons that travel between laptops
 
-Once a repair holds, the owner can choose to share a lesson: on a ThinkPad T480 with this symptom, battery swaps failed and the DC jack fixed it. Lessons go into a shared namespace per device family, with costs, notes and wallet details stripped out.
+Once a repair holds, the owner can choose to share a lesson: on a MacBook Pro 13 with this symptom, battery swaps failed and replacing the USB-C port fixed it. Lessons go into a shared namespace per device family, with costs, notes and wallet details stripped out.
 
-A brand-new T480 with no history of its own then opens with something like "2 other T480 owners fixed this with the charging port."
+Another MacBook Pro 13 with no history of its own then opens with something like "2 other owners of this model fixed it at the charging port."
 
 Shared data is an obvious target for abuse, so lessons are deliberately weak:
 
@@ -91,6 +91,6 @@ The diagnosis engine is deterministic: priors multiplied by outcome evidence, sy
 - **No-wallet demo:** https://retrace.38.49.210.22.sslip.io/demo
 - **Code:** https://github.com/IamHarrie-Labs/retrace
 
-The sample passport is a real ThinkPad T480 on Mainnet: [`0xcf67d39d…bcb3`](https://suiscan.xyz/mainnet/object/0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3).
+The live passport on Mainnet happens to be a ThinkPad T480, because Retrace works the same way for any laptop on its list: [`0xcf67d39d…bcb3`](https://suiscan.xyz/mainnet/object/0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3).
 
 The point of Retrace is small: the third shop shouldn't replace the battery. A laptop that remembers what's been tried can tell it so.
