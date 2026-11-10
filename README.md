@@ -6,9 +6,9 @@ Retrace is repair memory that stays with a device. Owners and technicians record
 
 Built for **Total Recall — Tatum × Walrus Memory Hackathon** (Smart Agents for Real Life track).
 
-- **Live app:** https://retrace.38.49.210.22.sslip.io
-- **Proof on Mainnet:** [https://retrace.38.49.210.22.sslip.io/proof](https://retrace.38.49.210.22.sslip.io/proof) shows every Walrus Memory write, its namespace and the Sui checkpoint read through Tatum.
-- **Try it without a wallet:** [https://retrace.38.49.210.22.sslip.io/demo](https://retrace.38.49.210.22.sslip.io/demo) walks through a MacBook Pro 13 charging fault with memory on and off.
+- **Live app:** https://useretrace.xyz
+- **Proof on Mainnet:** [https://useretrace.xyz/proof](https://useretrace.xyz/proof) shows every Walrus Memory write, its namespace and the Sui checkpoint read through Tatum.
+- **Try it without a wallet:** [https://useretrace.xyz/demo](https://useretrace.xyz/demo) walks through a MacBook Pro 13 charging fault with memory on and off.
 - **Sample passport:** [`0xcf67d39d…bcb3`](https://suiscan.xyz/mainnet/object/0xcf67d39d32099936cf11dd2a756e38513c8d06534467e1281b2878e93b5ebcb3) (Lenovo ThinkPad T480, 4 records, 1 shop-verified)
 - **Write-up:** [docs/blog-post.md](docs/blog-post.md) · **Video script:** [docs/demo-script.md](docs/demo-script.md)
 
